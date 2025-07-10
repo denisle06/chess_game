@@ -13,6 +13,10 @@ namespace ChessGame.CommandSpace
     public class MoveCommand : Command//command pattern
     {
         string[] valid_input = new string[] {"1", "2", "3", "4", "5", "6", "7", "8", "a", "b", "c", "d", "e", "f", "g", "h"};
+        ChessPiece moved_piece = null;
+        ChessPiece captured_piece = null;
+        (int, int) old_location; //for undo
+        (int, int) new_location;
         public MoveCommand(Board board) : base(board)
         {
         }
@@ -67,6 +71,12 @@ namespace ChessGame.CommandSpace
                     else { additional_output = ".Captured the " + target.Name; }
                 }
 
+                //for undo
+                old_location = (start_row, start_col);
+                new_location = (end_row, end_col);
+                captured_piece = _board.ChessGrid[end_row, end_col];
+                moved_piece = piece;
+
                 piece.X = end_row;
                 piece.Y = end_col;
                 _board.ChessGrid[start_row, start_col] = null;
@@ -82,6 +92,26 @@ namespace ChessGame.CommandSpace
             if (!char.IsLetter(char_list[0]) || !char.IsDigit(char_list[1])) return "Invalid command format";
             if (!valid_input.Contains(char_list[1].ToString()) || !valid_input.Contains(char_list[0].ToString())) return "Invalid position";
             return "valid";
+        }
+
+        public (int, int) OldLocation
+        {
+            get { return old_location; }
+        }
+
+        public (int, int) NewLocation
+        {
+            get { return new_location; }
+        }
+
+        public ChessPiece CapturedPiece
+        {
+            get { return captured_piece; }
+        }
+
+        public ChessPiece MovedPiece
+        {
+            get { return moved_piece; }
         }
     }
 }

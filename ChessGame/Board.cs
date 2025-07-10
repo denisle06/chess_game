@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ChessGame.Pieces;
 
+//Plan: movecommand check if legal move, aka if the move is in check undo it. board will implement the actual checkmate logic, aka get legal moves -> check if player have any legal move left.
+
 namespace ChessGame
 {
     public class Board

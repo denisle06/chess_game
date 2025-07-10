@@ -13,8 +13,8 @@ namespace ChessGame
     public enum Color { White, Black}
     public class Player
     {
-        Command _command;
-        Stack<Command> _stack = new Stack<Command>();
+        MoveCommand _command;
+        Stack<MoveCommand> _stack = new Stack<MoveCommand>();
         List<ChessPiece> _pieces = new List<ChessPiece> ();
         Color _playerColor;
         Board _board;
@@ -51,21 +51,6 @@ namespace ChessGame
             return output;
         }
 
-        public List<ChessPiece> Pieces
-        {
-            get { return _pieces; }
-        }
-
-        public Board Board
-        {
-            get { return _board; }
-        }
-        public Command Command 
-        {
-            get { return _command; }
-            set { _command = value; }
-        }
-
         public List<(int, int)> AvailableKingMove()
         {
             ChessPiece king = _pieces.OfType<Knight>().FirstOrDefault();
@@ -75,22 +60,34 @@ namespace ChessGame
             {
                 for (int location_y = 1; location_y < 9; location_y++)
                 {
-                    if (king.MoveSet.ValidMove(king, _board, king.X, king.Y, location_x, location_y ) || king.MoveSet.CheckObstruction(king, _board, king.X, king.Y, location_x, location_y) || king.MoveSet.CheckCapture(king, _board, location_x, location_y))
+                    if (king.MoveSet.ValidMove(king, _board, king.X, king.Y, location_x, location_y) || king.MoveSet.CheckObstruction(king, _board, king.X, king.Y, location_x, location_y) || king.MoveSet.CheckCapture(king, _board, location_x, location_y))
                     {
                         available_location.Add((location_x, location_y));
                     }
                 }
             }
-
             return available_location;
         }
 
-        public string CanCheckKing(int x, int y)
+        public List<ChessPiece> Pieces
         {
-            foreach (ChessPiece piece in _pieces)
-            {
-                if (piece.MoveSet.ValidMove(piece, _board, piece.X, piece.Y, x, y) || piece.MoveSet.CheckObstruction(piece, _board, piece.X, piece.Y, x, y) || piece.MoveSet.CheckCapture(piece, _board, x, y)) ;
-            }
+            get { return _pieces; }
+        }
+
+        public Board Board
+        {
+            get { return _board; }
+        }
+        public MoveCommand Command 
+        {
+            get { return _command; }
+            set { _command = value; }
+        }
+
+        public Stack<MoveCommand> CommandList
+        {
+            get { return _stack; }
+            set { _stack = value; }
         }
     }
 }

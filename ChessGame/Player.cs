@@ -53,7 +53,7 @@ namespace ChessGame
 
         public List<(int, int)> AvailableKingMove()
         {
-            ChessPiece king = _pieces.OfType<Knight>().FirstOrDefault();
+            ChessPiece king = _pieces.OfType<King>().FirstOrDefault();
             List<(int, int)> available_location = new List<(int, int)> { };
 
             for (int location_x = 1; location_x < 9; location_x++) //check every cell on board to account for possible upgrades

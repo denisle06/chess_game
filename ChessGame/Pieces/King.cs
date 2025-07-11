@@ -13,6 +13,5 @@ namespace ChessGame.Pieces
         {
             _moveset = new KingMoveSet();
         }
-
     }
 }

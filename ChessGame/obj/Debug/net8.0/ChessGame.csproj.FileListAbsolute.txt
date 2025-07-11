@@ -12,3 +12,4 @@ C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessGame\obj\Debu
 C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessGame\obj\Debug\net8.0\ChessGame.pdb
 C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessGame\obj\Debug\net8.0\ChessGame.genruntimeconfig.cache
 C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessGame\obj\Debug\net8.0\ref\ChessGame.dll
+C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessGame\obj\Debug\net8.0\ChessGame.sourcelink.json

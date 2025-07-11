@@ -27,6 +27,7 @@ namespace ChessGame.Pieces
             _moved = false;
         }
 
+
         public string makeName()
         {
             return _color.ToString()[0] + " " + GetType().Name; //convert enum object to string + get its class to create a name for the piece

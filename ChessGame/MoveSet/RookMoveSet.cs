@@ -15,7 +15,7 @@ namespace ChessGame.MoveSet
 
         public override bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
         {
-            if ((dest_x == x || dest_y == y))
+            if (dest_x == x || dest_y == y)
             {
                 return true;
             }

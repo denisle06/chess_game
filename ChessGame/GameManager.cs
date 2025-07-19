@@ -37,8 +37,18 @@ namespace ChessGame
             } 
         }
 
-        public bool InCheck(Player p, Player opponent)
+        public bool InCheck(Player p)
         {
+            Player opponent;
+            if (p == _whiteP)
+            {
+                opponent = _blackP;
+            }
+            else
+            {
+                opponent = _whiteP;
+            }
+
             ChessPiece king = p.Pieces.OfType<King>().FirstOrDefault();
             foreach (ChessPiece piece in opponent.Pieces) 
             {
@@ -51,15 +61,6 @@ namespace ChessGame
 
         public bool HaveValidMove(Player p)
         {
-            Player opponent;
-            if (p == _whiteP)
-            {
-                opponent = _blackP;
-            }
-            else
-            {
-                opponent = _whiteP;
-            }
 
             foreach (ChessPiece piece in p.Pieces)
             {
@@ -75,7 +76,7 @@ namespace ChessGame
                         p.Command = command;
                         string output = p.ExecuteCommand(input);
 
-                        if (output.StartsWith("Move executed") && !(InCheck(p, opponent)))
+                        if (output.StartsWith("Move executed") && !(InCheck(p)))
                         {
                             Undo(p);
                             return true;
@@ -86,6 +87,24 @@ namespace ChessGame
                         }
                     }
                 } 
+            }
+            return false;
+        }
+
+        public bool Checkmate(Player p)
+        {
+            if (InCheck(p) && !(HaveValidMove(p))) 
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool Stalemate(Player p)
+        {
+            if (!InCheck(p) && !(HaveValidMove(p)))
+            {
+                return true;
             }
             return false;
         }

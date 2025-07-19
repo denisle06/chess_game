@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +15,7 @@ namespace ChessGame.MoveSet
 
         public override bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
         {
-            if ((Math.Abs(dest_x - x) == 2 && Math.Abs(dest_y - y) == 1) || (Math.Abs(dest_x - x) == 1 && Math.Abs(dest_y - y) == 2)) //2 in a direction and then 1
+            if (Math.Abs(dest_x - x) == 2 && Math.Abs(dest_y - y) == 1 || Math.Abs(dest_x - x) == 1 && Math.Abs(dest_y - y) == 2) //2 in a direction and then 1
             {
                 return true;
             }

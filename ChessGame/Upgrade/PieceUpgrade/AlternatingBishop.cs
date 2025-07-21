@@ -7,11 +7,11 @@ using ChessGame.Decorator.MoveSetDecorator;
 
 namespace ChessGame.Upgrade.PieceUpgrade
 {
-    internal class DiagonalPawn : PieceUpgrade
+    internal class AlternatingBishop : PieceUpgrade
     {
-        public DiagonalPawn(Board board) : base(board)
+        public AlternatingBishop(Board board) : base(board)
         {
-            _identifier.Add("diagonal_pawn");
+            _identifier.Add("alternating_bishop");
         }
     }
 }

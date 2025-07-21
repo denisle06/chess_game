@@ -54,6 +54,10 @@ namespace ChessGame.Pieces
 
         public bool Moved { get { return _moved; } set { _moved = value; } }
 
-        public PieceMoveSet MoveSet { get { return _moveset; } }
+        public PieceMoveSet MoveSet
+        {
+            get { return _moveset; }
+            set { _moveset = value; }
+        }
     }
 }

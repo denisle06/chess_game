@@ -7,11 +7,11 @@ using ChessGame.Decorator.MoveSetDecorator;
 
 namespace ChessGame.Upgrade.PieceUpgrade
 {
-    internal class DiagonalPawn : PieceUpgrade
+    internal class LongRangeCatapult : PieceUpgrade
     {
-        public DiagonalPawn(Board board) : base(board)
+        public LongRangeCatapult(Board board) : base(board)
         {
-            _identifier.Add("diagonal_pawn");
+            _identifier.Add("long_range");
         }
     }
 }

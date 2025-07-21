@@ -64,6 +64,20 @@ namespace ChessGame
             }
         }
 
+        public List<ChessPiece> GetAllPieces()
+        {
+            List<ChessPiece> chessPieces = new List<ChessPiece>();
+
+            for (int x = 0; x < 8; x++)
+            {
+                for (int y = 0; y < 8; y++)
+                {
+                    if (ChessBoard[x,y] != null) chessPieces.Add(ChessBoard[x,y]);
+                }
+            }
+
+            return chessPieces;
+        }
         public ChessPiece[,] ChessGrid { get { return ChessBoard; } }
     }
 }

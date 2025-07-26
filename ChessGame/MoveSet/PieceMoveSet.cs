@@ -22,7 +22,7 @@ namespace ChessGame.MoveSet
         public virtual bool CheckCapture(ChessPiece piece, Board board, int dest_x, int dest_y)
         {
             ChessPiece target = board.ChessGrid[dest_x, dest_y];
-            //if (target == null) return true; the logic in handled in movecommand
+            if (target == null) return true; 
             if (piece.Color == target.Color)
             {
                 return false;

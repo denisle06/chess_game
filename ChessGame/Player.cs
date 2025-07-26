@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ChessGame
 {
     
-    public enum Color { White, Black}
+    
     public class Player
     {
         MoveCommand _command;
@@ -67,6 +67,11 @@ namespace ChessGame
                 }
             }
             return available_location;
+        }
+
+        public Color Color
+        {
+            get { return _playerColor; }
         }
 
         public List<ChessPiece> Pieces

@@ -85,6 +85,20 @@ namespace ChessGame.CommandSpace
             }
         }
 
+        public void Execute(ChessPiece piece, (int, int) location)
+        {
+            moved_piece = piece;
+            captured_piece = _board.ChessGrid[location.Item1, location.Item2];
+            old_location = (piece.X, piece.Y);
+            new_location = location;
+
+            _board.ChessGrid[piece.X, piece.Y] = null;
+            piece.X = location.Item1;
+            piece.Y = location.Item2;
+            _board.ChessGrid[piece.X, piece.Y] = piece;
+
+        }
+
         public override string CheckValidInput(string check)
         {
             char[] char_list = check.ToCharArray();

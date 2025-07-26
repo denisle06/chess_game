@@ -13,7 +13,9 @@ namespace ChessGame
     {
         ChessPiece[,] ChessBoard = new ChessPiece[8, 8];
 
-        public Board() { }
+        public Board() 
+        {
+        }
 
         public void createGrid(List<Player> playerList)
         {
@@ -78,6 +80,7 @@ namespace ChessGame
 
             return chessPieces;
         }
+
         public ChessPiece[,] ChessGrid { get { return ChessBoard; } }
     }
 }

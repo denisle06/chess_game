@@ -23,7 +23,7 @@ namespace ChessUI
     /// </summary>
     /// 
 
-    ///due to logic mismatch between the wdf display, which 
+    ///due to logic mismatch between the wdf display, which means that visual input must be flipped for the backend handling
     public partial class MainWindow : Window
     {
         private readonly Image[,] pieceImages = new Image[8, 8];

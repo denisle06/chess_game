@@ -1,6 +1,7 @@
 ﻿using ChessGame.Pieces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace ChessGame.MoveSet
         public virtual bool CheckCapture(ChessPiece piece, Board board, int dest_x, int dest_y)
         {
             ChessPiece target = board.ChessGrid[dest_x, dest_y];
+            
             if (target == null) return true; 
             if (piece.Color == target.Color)
             {

@@ -105,7 +105,7 @@ namespace ChessGame
                     bool clear = piece.MoveSet.CheckObstruction(piece, _board, piece.X, piece.Y, x, y);
                     bool capture = piece.MoveSet.CheckCapture(piece, _board, x, y);
 
-                    if (valid && clear)
+                    if (valid && clear && capture)
                     {
                         MoveCommand move = new MoveCommand(_board);
                         move.Execute(piece, (x, y));

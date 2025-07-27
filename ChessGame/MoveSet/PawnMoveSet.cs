@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -22,53 +23,29 @@ namespace ChessGame.MoveSet
 
             if (x == dest_x)
             {
-                if (!piece.Moved && (y + 2 * direction == dest_y || y + direction == dest_y))
-                {
-                    piece.Moved = true;
-                    return true;
-                }
-                else if (y + direction == dest_y) return true;
+                if (piece.Color == Color.White && y == 1 && dest_y == 3) return true;
+                if (piece.Color == Color.Black && y == 6 && dest_y == 4) return true;
+                if (y + direction == dest_y) return true;
             }
 
-            if (Math.Abs(dest_x - x) == 1 && Math.Abs(dest_y - y) == direction)
+            if (Math.Abs(dest_x - x) == 1 && y + direction == dest_y)
             {
-                if (CheckCapture(piece, board, dest_x, dest_y) == true)
+                
+                if (CheckCapture(piece, board, dest_x, dest_y) == true && board.ChessGrid[dest_x, dest_y] != null)
                 {
                     return true;
                 }
             }
-
+            
             return false;
         }
 
         public override bool CheckObstruction(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y) //check pawn position from the pawn up
         {
-            if (piece.Color == Color.White)
-            {
 
-                if (dest_y == y + 2)
-                {
-                    return board.ChessGrid[x, y + 1] == null && board.ChessGrid[x, y + 2] == null;
-                }
-
-                else if (dest_y == y + 1)
-                {
-                    return board.ChessGrid[x, y + 1] == null;
-                }
-            }
-            else 
-            {
-                if (dest_y == y - 2)
-                {
-                    return board.ChessGrid[x, y - 1] == null && board.ChessGrid[x, y - 2] == null;
-                }
-                else if (dest_y == y - 1)
-                {
-                    return board.ChessGrid[x, y - 1] == null;
-                }
-            }
-
-            return false; 
+            if (piece.Color == Color.White && x == dest_x) return board.ChessGrid[x, y + 1] == null;
+            if (piece.Color == Color.Black && x == dest_x) return board.ChessGrid[x, y - 1] == null;
+            return true;
         }
     }
 }

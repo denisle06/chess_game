@@ -112,8 +112,8 @@ namespace ChessUI
                 if (selected_pos is (int row, int col))
                 {
                     move.Execute(_game.Board.ChessGrid[row, col], (x, y));
-                    DrawBoard(_game.Board);
-                    
+                    _game.ChangeTurn();
+                    DrawBoard(_game.Board);      
                 }
             }
 

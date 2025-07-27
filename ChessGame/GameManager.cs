@@ -3,6 +3,7 @@ using ChessGame.Pieces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -18,6 +19,7 @@ namespace ChessGame
         private Player _whiteP;
         private Player _blackP;
         private Color _turn;
+        private bool _stop = false;
 
         public GameManager() 
         {
@@ -32,6 +34,22 @@ namespace ChessGame
 
         public void ChangeTurn()
         {
+            if ((InCheck(WhiteP))) Debug.WriteLine($"{WhiteP.Color}'s king is threatened");
+            if ((InCheck(BlackP))) Debug.WriteLine($"{BlackP.Color}'s king is threatened");
+            if (Checkmate(WhiteP) || Checkmate(BlackP))
+            {
+                Debug.WriteLine($"Checkmate!");
+                Debug.WriteLine($"{_turn} won");
+                _stop = true;
+            }
+             
+            if (Stalemate(WhiteP) || Stalemate(BlackP))
+            {
+                Debug.WriteLine($"Stalemate!");
+                Debug.WriteLine($"Draw");
+                _stop = true;
+            }
+
             if (_turn == Color.White) _turn = Color.Black;
             else _turn = Color.White;
         }
@@ -90,10 +108,19 @@ namespace ChessGame
         {
             List<(int, int)> pos_list = new List<(int, int)>();
             Player p;
+            Player opp;
 
             if (_turn != piece.Color) return pos_list;
-            if (WhiteP.Color == piece.Color) p = WhiteP;
-            else p = BlackP;
+            if (WhiteP.Color == piece.Color)
+            {
+                p = WhiteP; 
+                opp = BlackP;
+            }
+            else
+            {
+                p = BlackP;
+                opp = WhiteP;
+            }
 
             for (int x = 0; x < 8; x++)
             {
@@ -109,6 +136,8 @@ namespace ChessGame
                     {
                         MoveCommand move = new MoveCommand(_board);
                         move.Execute(piece, (x, y));
+                        if (move.CapturedPiece != null) opp.Pieces.Remove(move.CapturedPiece);
+
                         if (InCheck(p)) Undo(move);
                         else
                         {

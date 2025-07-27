@@ -43,8 +43,18 @@ namespace ChessGame.MoveSet
         public override bool CheckObstruction(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y) //check pawn position from the pawn up
         {
 
-            if (piece.Color == Color.White && x == dest_x) return board.ChessGrid[x, y + 1] == null;
-            if (piece.Color == Color.Black && x == dest_x) return board.ChessGrid[x, y - 1] == null;
+            if (piece.Color == Color.White && x == dest_x)
+            {
+                if (dest_y - y == 2) return board.ChessGrid[x, y + 1] == null && board.ChessGrid[x, y + 2] == null;
+                else return board.ChessGrid[x, y + 1] == null;
+            }
+
+            if (piece.Color == Color.Black && x == dest_x)
+            {
+                if (dest_y - y == 2) return board.ChessGrid[x, y + 1] == null && board.ChessGrid[x, y + 2] == null;
+                else return board.ChessGrid[x, y - 1] == null;
+            }
+            
             return true;
         }
     }

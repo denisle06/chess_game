@@ -119,29 +119,67 @@ namespace ChessGame
             {
                 for (int y = 0; y < 8; y++)
                 {
-                    if ((x, y) == (piece.X, piece.Y)) continue;
-
-                    bool valid = piece.MoveSet.ValidMove(piece, _board, piece.X, piece.Y, x, y);
-                    bool clear = piece.MoveSet.CheckObstruction(piece, _board, piece.X, piece.Y, x, y);
-                    bool capture = piece.MoveSet.CheckCapture(piece, _board, x, y);
-
-                    if (valid && clear && capture)
-                    {
-                        MoveCommand move = new MoveCommand(_board);
-                        move.Execute(piece, (x, y));
-                        if (move.CapturedPiece != null) opp.Pieces.Remove(move.CapturedPiece);  //remove the piece if capture a piece
-
-                        if (InCheck(p)) Undo(move);
-                        else
-                        {
-                            pos_list.Add((x, y));
-                            Undo(move);
-                        }
-                    }
-                    
+                    if (CreateAndExecuteCommand(piece, x, y, p, opp, true)) pos_list.Add((x, y));
                 }
             }
             return pos_list;
+        }
+
+        public bool CreateAndExecuteCommand(ChessPiece piece, int x, int y, Player p, Player opp, bool simulate) //destination x and y
+        {
+            if (simulate == true)
+            {
+                if ((x, y) == (piece.X, piece.Y)) return false;
+
+                bool valid = piece.MoveSet.ValidMove(piece, _board, piece.X, piece.Y, x, y);
+                bool clear = piece.MoveSet.CheckObstruction(piece, _board, piece.X, piece.Y, x, y);
+                bool capture = piece.MoveSet.CheckCapture(piece, _board, x, y);
+
+                if (valid && clear && capture)
+                {
+                    MoveCommand move = new MoveCommand(_board);
+                    move.Execute(piece, (x, y));
+                    if (move.CapturedPiece != null) opp.Pieces.Remove(move.CapturedPiece);  //remove the piece if capture a piece
+
+                    if (InCheck(p))
+                    {
+                        Undo(move);
+                        return false;
+                    }
+                    else
+                    {
+                        Undo(move);
+                        return true;
+                    }
+                }
+                return false;
+            }
+            else
+            {
+                if ((x, y) == (piece.X, piece.Y)) return false;
+
+                bool valid = piece.MoveSet.ValidMove(piece, _board, piece.X, piece.Y, x, y);
+                bool clear = piece.MoveSet.CheckObstruction(piece, _board, piece.X, piece.Y, x, y);
+                bool capture = piece.MoveSet.CheckCapture(piece, _board, x, y);
+
+                if (valid && clear && capture)
+                {
+                    MoveCommand move = new MoveCommand(_board);
+                    move.Execute(piece, (x, y));
+                    if (move.CapturedPiece != null) opp.Pieces.Remove(move.CapturedPiece);  //remove the piece if capture a piece
+
+                    if (InCheck(p))
+                    {
+                        Undo(move);
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
 
         public bool HaveValidMove(Player p)
@@ -186,6 +224,11 @@ namespace ChessGame
         public Player BlackP
         {
             get { return _blackP; }
+        }
+
+        public Color Turn
+        {
+            get { return _turn; }
         }
     }
 }

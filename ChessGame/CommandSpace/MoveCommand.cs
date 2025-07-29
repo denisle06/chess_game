@@ -10,15 +10,17 @@ using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ChessGame.CommandSpace
-{   
+{
+    public enum MoveType{ Normal, Castling, Passant, Promotion }
     public class MoveCommand
     {
         Board _board;
-
+        MoveType _moveType;
         ChessPiece moved_piece = null;
         ChessPiece captured_piece = null;
         (int, int) old_location; //for undo
         (int, int) new_location;
+
         public MoveCommand(Board board)
         {
             _board = board;
@@ -38,6 +40,38 @@ namespace ChessGame.CommandSpace
             piece.X = location.Item1;
             piece.Y = location.Item2;
             _board.ChessGrid[piece.X, piece.Y] = piece;
+        }
+
+        public MoveType CheckMoveType(ChessPiece piece, (int, int) location)
+        {
+            int dest_x = location.Item1;
+            int dest_y = location.Item2;
+
+            if (piece is Pawn)
+            {
+                if (piece.Color == Color.White)
+                {
+                    if (dest_y == 7) return MoveType.Promotion;
+                    if (piece.Y == 4 &&
+                        dest_y == 5 &&
+                        _board.ChessGrid[dest_x, 4] != null) return MoveType.Passant; //condition to recognize en passant
+                }
+
+                if (piece.Color == Color.Black)
+                {
+                    if (dest_y == 0) return MoveType.Promotion;
+                    if (piece.Y == 3 &&
+                        dest_y == 2 &&
+                        _board.ChessGrid[dest_x, 3] != null) return MoveType.Passant;
+                }
+            }
+
+            if (piece is King &&
+                _board.ChessGrid[dest_x, dest_y] is Rook &&
+                piece.Color == _board.ChessGrid[dest_x, dest_y].Color &&
+                piece.Moved == false && _board.ChessGrid[dest_x, dest_y].Moved == false) return MoveType.Castling;
+
+            return MoveType.Normal;
         }
 
         
@@ -60,6 +94,11 @@ namespace ChessGame.CommandSpace
         public ChessPiece MovedPiece
         {
             get { return moved_piece; }
+        }
+
+        public MoveType MoveType
+        {
+            get { return _moveType; }
         }
     }
 }

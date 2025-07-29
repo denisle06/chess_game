@@ -46,7 +46,7 @@ namespace ChessGame.MoveSet
             while (currentX != dest_x || currentY != dest_y)
             {
                 if (currentX < 0 || currentX >= 8 || currentY < 0 || currentY >= 8) //stop out of bound checking
-                    return true;
+                    return false;
 
                 if (board.ChessGrid[currentX, currentY] != null)
                     return false;

@@ -36,14 +36,15 @@ namespace ChessGame
         {
             if ((InCheck(WhiteP))) Debug.WriteLine($"{WhiteP.Color}'s king is threatened");
             if ((InCheck(BlackP))) Debug.WriteLine($"{BlackP.Color}'s king is threatened");
-            if (Checkmate(WhiteP) || Checkmate(BlackP))
+
+            if ((_turn == Color.White && Checkmate(WhiteP)) || (_turn == Color.Black && Checkmate(BlackP)))
             {
-                Debug.WriteLine($"Checkmate!");
-                Debug.WriteLine($"{_turn} won");
+                    Debug.WriteLine($"Checkmate!");
+                if (_turn == Color.White) Debug.WriteLine($"Black won");
+                else Debug.WriteLine($"White won");
                 _stop = true;
             }
-             
-            if (Stalemate(WhiteP) || Stalemate(BlackP))
+            else if (_turn == Color.White && Stalemate(WhiteP) || _turn == Color.Black && Stalemate(BlackP))
             {
                 Debug.WriteLine($"Stalemate!");
                 Debug.WriteLine($"Draw");
@@ -100,6 +101,7 @@ namespace ChessGame
                 if (piece.MoveSet.ValidMove(piece, _board, piece.X, piece.Y, king.X, king.Y) &&
                     piece.MoveSet.CheckObstruction(piece, _board, piece.X, piece.Y, king.X, king.Y)) 
                     return true;
+
             }
             return false;
         }

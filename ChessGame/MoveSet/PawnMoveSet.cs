@@ -51,7 +51,7 @@ namespace ChessGame.MoveSet
 
             if (piece.Color == Color.Black && x == dest_x)
             {
-                if (dest_y - y == 2) return board.ChessGrid[x, y + 1] == null && board.ChessGrid[x, y + 2] == null;
+                if (dest_y - y == -2) return board.ChessGrid[x, y - 1] == null && board.ChessGrid[x, y - 2] == null;
                 else return board.ChessGrid[x, y - 1] == null;
             }
             

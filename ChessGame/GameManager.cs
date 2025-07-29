@@ -55,19 +55,7 @@ namespace ChessGame
             else _turn = Color.White;
         }
 
-        public void Undo(Player p)
-        {
-            MoveCommand command = p.CommandList.Pop();
-            command.MovedPiece.X = command.OldLocation.Item1;
-            command.MovedPiece.Y = command.OldLocation.Item2;
-            _board.ChessGrid[command.OldLocation.Item1, command.OldLocation.Item2] = command.MovedPiece;
-            if (!(command.CapturedPiece == null))
-            {
-                command.CapturedPiece.X = command.NewLocation.Item1;
-                command.CapturedPiece.Y = command.NewLocation.Item2;
-                _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = command.CapturedPiece;
-            } 
-        }
+        
 
         public void Undo(MoveCommand command) //undo the command
         {
@@ -77,6 +65,9 @@ namespace ChessGame
             _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = null;
             if (!(command.CapturedPiece == null))
             {
+                Player opponent = command.CapturedPiece.Color == Color.White ? _whiteP : _blackP;   //re-add the piece back to the player
+                if (!opponent.Pieces.Contains(command.CapturedPiece)) opponent.Pieces.Add(command.CapturedPiece);
+
                 command.CapturedPiece.X = command.NewLocation.Item1;
                 command.CapturedPiece.Y = command.NewLocation.Item2;
                 _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = command.CapturedPiece;
@@ -138,7 +129,7 @@ namespace ChessGame
                     {
                         MoveCommand move = new MoveCommand(_board);
                         move.Execute(piece, (x, y));
-                        if (move.CapturedPiece != null) opp.Pieces.Remove(move.CapturedPiece);
+                        if (move.CapturedPiece != null) opp.Pieces.Remove(move.CapturedPiece);  //remove the piece if capture a piece
 
                         if (InCheck(p)) Undo(move);
                         else
@@ -198,3 +189,20 @@ namespace ChessGame
         }
     }
 }
+
+
+
+
+//public void Undo(Player p)
+//{
+//   MoveCommand command = p.CommandList.Pop();
+//    command.MovedPiece.X = command.OldLocation.Item1;
+//    command.MovedPiece.Y = command.OldLocation.Item2;
+//    _board.ChessGrid[command.OldLocation.Item1, command.OldLocation.Item2] = command.MovedPiece;
+//    if (!(command.CapturedPiece == null))
+//    {
+//        command.CapturedPiece.X = command.NewLocation.Item1;
+//        command.CapturedPiece.Y = command.NewLocation.Item2;
+//        _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = command.CapturedPiece;
+//    } 
+//}

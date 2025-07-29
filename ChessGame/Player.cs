@@ -44,12 +44,12 @@ namespace ChessGame
             }
         }
 
-        public string ExecuteCommand(string input)
-        {
-            string output = _command.Execute(input);
-            _stack.Push(_command); //for the redo feature in future
-            return output;
-        }
+        //public string ExecuteCommand(string input)
+        //{
+        //    string output = _command.Execute(input);
+        //    _stack.Push(_command); //for the redo feature in future
+        //    return output;
+        //}
 
         public List<(int, int)> AvailableKingMove()
         {

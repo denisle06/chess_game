@@ -16,7 +16,7 @@ namespace ChessGame.MoveSet
 
         public override bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
         {
-            if (Math.Abs(dest_x - x) <= 1 && Math.Abs(dest_y - y) <= 1) //if the absolute difference is smaller than 1
+            if (Math.Abs(dest_x - x) <= 1 && Math.Abs(dest_y - y) <= 1) //if the absolute difference is smaller than or equal to 1
             {
                 return true;
             }

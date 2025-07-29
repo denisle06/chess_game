@@ -112,7 +112,12 @@ namespace ChessUI
                 if (selected_pos is (int row, int col))
                 {
                     move.Execute(_game.Board.ChessGrid[row, col], (x, y));
-                    _game.ChangeTurn();
+                    if (move.CapturedPiece != null)
+                    {
+                        Player opp = move.CapturedPiece.Color == ChessGame.Color.White ? _game.WhiteP : _game.BlackP; //remove the capture piece
+                        opp.Pieces.Remove(move.CapturedPiece);
+                    }
+                        _game.ChangeTurn();
                     DrawBoard(_game.Board);      
                 }
             }

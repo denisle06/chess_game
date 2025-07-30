@@ -3,6 +3,7 @@ using ChessGame.Pieces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace ChessGame.CommandSpace
 {
     public enum MoveType{ Normal, Castling, Passant, Promotion }
-    public class MoveCommand
+    public class MoveCommand //command pattern
     {
         Board _board;
         MoveType _moveType;
@@ -21,25 +22,31 @@ namespace ChessGame.CommandSpace
         (int, int) old_location; //for undo
         (int, int) new_location;
 
-        public MoveCommand(Board board)
+
+        public MoveCommand(Board board, ChessPiece piece, (int, int) location)
         {
             _board = board;
+            moved_piece = piece;
+            old_location = (piece.X, piece.Y);
+            new_location = location;
+            captured_piece = _board.ChessGrid[location.Item1, location.Item2];
+            _moveType = CheckMoveType(piece, location);
         }
 
         
 
 
-        public void Execute(ChessPiece piece, (int, int) location)
+        public bool Execute(ChessPiece piece, (int, int) location)
         {
-            moved_piece = piece;
-            captured_piece = _board.ChessGrid[location.Item1, location.Item2];
-            old_location = (piece.X, piece.Y);
-            new_location = location;
+            if ((location.Item1, location.Item2) == (piece.X, piece.Y)) return false;
+            bool check = ConditionCheck();
+            if (!check) return false; 
 
             _board.ChessGrid[piece.X, piece.Y] = null;
             piece.X = location.Item1;
             piece.Y = location.Item2;
             _board.ChessGrid[piece.X, piece.Y] = piece;
+            return true;
         }
 
         public MoveType CheckMoveType(ChessPiece piece, (int, int) location)
@@ -54,7 +61,11 @@ namespace ChessGame.CommandSpace
                     if (dest_y == 7) return MoveType.Promotion;
                     if (piece.Y == 4 &&
                         dest_y == 5 &&
-                        _board.ChessGrid[dest_x, 4] != null) return MoveType.Passant; //condition to recognize en passant
+                        _board.ChessGrid[dest_x, piece.Y] != null &&
+                        _board.ChessGrid[dest_x, piece.Y].Color != piece.Color &&
+                        _board.ChessGrid[dest_x, dest_y] == null &&
+                        _board.ChessGrid[dest_x, piece.Y] is Pawn &&
+                        Math.Abs(dest_x - piece.X) == 1) return MoveType.Passant; //condition to recognize en passant
                 }
 
                 if (piece.Color == Color.Black)
@@ -62,7 +73,11 @@ namespace ChessGame.CommandSpace
                     if (dest_y == 0) return MoveType.Promotion;
                     if (piece.Y == 3 &&
                         dest_y == 2 &&
-                        _board.ChessGrid[dest_x, 3] != null) return MoveType.Passant;
+                        _board.ChessGrid[dest_x, piece.Y] != null &&
+                        _board.ChessGrid[dest_x, piece.Y].Color != piece.Color &&
+                        _board.ChessGrid[dest_x, dest_y] == null &&
+                        _board.ChessGrid[dest_x, piece.Y] is Pawn &&
+                        Math.Abs(dest_x - piece.X) == 1) return MoveType.Passant;
                 }
             }
 
@@ -74,6 +89,29 @@ namespace ChessGame.CommandSpace
             return MoveType.Normal;
         }
 
+
+        public bool ConditionCheck()
+        {
+            if ((moved_piece.X, moved_piece.Y) == new_location) 
+            {
+                Debug.WriteLine("Rejected move: same tile");
+                return false;
+            }
+            
+            switch (_moveType)
+            {
+                case MoveType.Normal:
+                    bool valid = moved_piece.MoveSet.ValidMove(moved_piece, _board, new_location.Item1, new_location.Item2);
+                    bool clear = moved_piece.MoveSet.CheckObstruction(moved_piece, _board, new_location.Item1, new_location.Item2);
+                    bool capture = moved_piece.MoveSet.CheckCapture(moved_piece, _board, new_location.Item1, new_location.Item2);
+
+                    if (valid && clear && capture) return true;
+                    else return false;
+
+                default:
+                    return false;
+            }
+        }
         
 
         public (int, int) OldLocation

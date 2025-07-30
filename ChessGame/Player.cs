@@ -60,7 +60,7 @@ namespace ChessGame
             {
                 for (int location_y = 1; location_y < 9; location_y++)
                 {
-                    if (king.MoveSet.ValidMove(king, _board, king.X, king.Y, location_x, location_y) || king.MoveSet.CheckObstruction(king, _board, king.X, king.Y, location_x, location_y) || king.MoveSet.CheckCapture(king, _board, location_x, location_y))
+                    if (king.MoveSet.ValidMove(king, _board, location_x, location_y) || king.MoveSet.CheckObstruction(king, _board, location_x, location_y) || king.MoveSet.CheckCapture(king, _board, location_x, location_y))
                     {
                         available_location.Add((location_x, location_y));
                     }

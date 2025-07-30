@@ -12,10 +12,13 @@ namespace ChessGame.Decorator.MoveSetDecorator
     {
         public AlternatingBishopDecorator(PieceMoveSet baseMoveSet) : base(baseMoveSet) { } //bishop can move 1 tile up or down
 
-        public override bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
+        public override bool ValidMove(ChessPiece piece, Board board, int dest_x, int dest_y)
         {
+            int x = piece.X;
+            int y = piece.Y;
+
             if (Math.Abs(y - dest_y) == 1) return true;
-            return base.ValidMove(piece, board, x, y, dest_x, dest_y);
+            return base.ValidMove(piece, board, dest_x, dest_y);
         }
     }
 }

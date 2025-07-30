@@ -12,8 +12,10 @@ namespace ChessGame.Decorator.MoveSetDecorator
     {
         public RetreatingQueenDecorator(PieceMoveSet baseMoveSet) : base(baseMoveSet) { }
 
-        public override bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
+        public override bool ValidMove(ChessPiece piece, Board board,  int dest_x, int dest_y)
         {
+            int x = piece.X;
+            int y = piece.Y;
             int y_change = dest_y - y;
             bool valid_direction = false; 
 
@@ -24,7 +26,7 @@ namespace ChessGame.Decorator.MoveSetDecorator
                (Math.Abs(dest_x - x) == 2 && Math.Abs(dest_y - y) == 1 ||
                Math.Abs(dest_x - x) == 1 && Math.Abs(dest_y - y) == 2)) return true;
 
-            return _baseMoveSet.ValidMove(piece, board, x, y, dest_x, dest_y);
+            return _baseMoveSet.ValidMove(piece, board, dest_x, dest_y);
         }
     }
 }

@@ -16,9 +16,9 @@ namespace ChessGame.MoveSet
         {
         }
 
-        public abstract bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y);
+        public abstract bool ValidMove(ChessPiece piece, Board board, int dest_x, int dest_y);
 
-        public abstract bool CheckObstruction(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y);
+        public abstract bool CheckObstruction(ChessPiece piece, Board board, int dest_x, int dest_y);
 
         public virtual bool CheckCapture(ChessPiece piece, Board board, int dest_x, int dest_y)
         {

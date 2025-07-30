@@ -13,8 +13,11 @@ namespace ChessGame.MoveSet
         {
         }
 
-        public override bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
+        public override bool ValidMove(ChessPiece piece, Board board, int dest_x, int dest_y)
         {
+            int x = piece.X;
+            int y = piece.Y;
+
             if (Math.Abs(dest_x - x) == 2 && Math.Abs(dest_y - y) == 1 || Math.Abs(dest_x - x) == 1 && Math.Abs(dest_y - y) == 2) //2 in a direction and then 1
             {
                 return true;
@@ -22,7 +25,7 @@ namespace ChessGame.MoveSet
             return false;
         }
 
-        public override bool CheckObstruction(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
+        public override bool CheckObstruction(ChessPiece piece, Board board,  int dest_x, int dest_y)
         {
             return true;
         }

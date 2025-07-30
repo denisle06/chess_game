@@ -12,14 +12,17 @@ namespace ChessGame.Decorator.MoveSetDecorator
     {
         public DiagonalPawnDecorator(PieceMoveSet baseMoveSet): base(baseMoveSet) {} //pawn can move diagonally
 
-        public override bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
+        public override bool ValidMove(ChessPiece piece, Board board,  int dest_x, int dest_y)
         {
+            int x = piece.X;
+            int y = piece.Y;
+
             int direction;
             if (piece.Color == Color.White) direction = 1;
             else direction = -1;
 
             if (Math.Abs(x - dest_x) == 1 && (y - dest_y) == direction) return true;
-            return base.ValidMove(piece, board, x, y, dest_x, dest_y);
+            return base.ValidMove(piece, board, dest_x, dest_y);
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -89,8 +90,8 @@ namespace ChessGame
             ChessPiece king = p.Pieces.OfType<King>().FirstOrDefault();
             foreach (ChessPiece piece in opponent.Pieces) 
             {
-                if (piece.MoveSet.ValidMove(piece, _board, piece.X, piece.Y, king.X, king.Y) &&
-                    piece.MoveSet.CheckObstruction(piece, _board, piece.X, piece.Y, king.X, king.Y)) 
+                if (piece.MoveSet.ValidMove(piece, _board, king.X, king.Y) &&
+                    piece.MoveSet.CheckObstruction(piece, _board, king.X, king.Y)) 
                     return true;
 
             }
@@ -126,59 +127,42 @@ namespace ChessGame
         }
 
         public bool CreateAndExecuteCommand(ChessPiece piece, int x, int y, Player p, Player opp, bool simulate) //destination x and y
+            //simulate flag for the undo
         {
+            if ((x, y) == (piece.X, piece.Y)) return false;
+            MoveCommand move = new MoveCommand(_board, piece, (x, y));
+
+            bool execute = move.Execute(piece, (x, y));
+            if (!execute)
+            { 
+                return false;
+            }
+            if (move.CapturedPiece != null) opp.Pieces.Remove(move.CapturedPiece);  //remove the piece if capture a piece
+            Debug.WriteLine($"Test movement with move type {move.MoveType} from ({move.OldLocation.Item1}, {move.OldLocation.Item2}) to {(x, y)}. The piece type is {piece.Name}. Move executed");
+            
             if (simulate == true)
             {
-                if ((x, y) == (piece.X, piece.Y)) return false;
-
-                bool valid = piece.MoveSet.ValidMove(piece, _board, piece.X, piece.Y, x, y);
-                bool clear = piece.MoveSet.CheckObstruction(piece, _board, piece.X, piece.Y, x, y);
-                bool capture = piece.MoveSet.CheckCapture(piece, _board, x, y);
-
-                if (valid && clear && capture)
+                if (InCheck(p))
                 {
-                    MoveCommand move = new MoveCommand(_board);
-                    move.Execute(piece, (x, y));
-                    if (move.CapturedPiece != null) opp.Pieces.Remove(move.CapturedPiece);  //remove the piece if capture a piece
-
-                    if (InCheck(p))
-                    {
-                        Undo(move);
-                        return false;
-                    }
-                    else
-                    {
-                        Undo(move);
-                        return true;
-                    }
+                    Debug.WriteLine($"Return false, move is not added to pos_list");
+                    Undo(move);
+                    return false;
                 }
-                return false;
+                else
+                {
+                    Debug.WriteLine($"Return true, move is added to pos_list");
+                    Undo(move);
+                    return true;
+                }
             }
             else
             {
-                if ((x, y) == (piece.X, piece.Y)) return false;
-
-                bool valid = piece.MoveSet.ValidMove(piece, _board, piece.X, piece.Y, x, y);
-                bool clear = piece.MoveSet.CheckObstruction(piece, _board, piece.X, piece.Y, x, y);
-                bool capture = piece.MoveSet.CheckCapture(piece, _board, x, y);
-
-                if (valid && clear && capture)
+                if (InCheck(p))
                 {
-                    MoveCommand move = new MoveCommand(_board);
-                    move.Execute(piece, (x, y));
-                    if (move.CapturedPiece != null) opp.Pieces.Remove(move.CapturedPiece);  //remove the piece if capture a piece
-
-                    if (InCheck(p))
-                    {
-                        Undo(move);
-                        return false;
-                    }
-                    else
-                    {
-                        return true;
-                    }
+                    Undo(move);
+                    return false;
                 }
-                return false;
+                else return true;             
             }
         }
 

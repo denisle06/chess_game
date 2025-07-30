@@ -12,8 +12,11 @@ namespace ChessGame.Decorator.MoveSetDecorator
     {
         public AgileKingDecorator(PieceMoveSet baseMoveSet) : base(baseMoveSet) { } //king can move 2 tile in any direction
 
-        public override bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
+        public override bool ValidMove(ChessPiece piece, Board board, int dest_x, int dest_y)
         {
+            int x = piece.X;
+            int y = piece.Y;
+
             int dx = Math.Abs(dest_x - x);
             int dy = Math.Abs(dest_y - y);
 
@@ -23,11 +26,14 @@ namespace ChessGame.Decorator.MoveSetDecorator
             {
                 return true;
             }
-            return base.ValidMove(piece, board, x, y, dest_x, dest_y); ;
+            return base.ValidMove(piece, board, dest_x, dest_y); ;
         }
 
-        public override bool CheckObstruction(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
+        public override bool CheckObstruction(ChessPiece piece, Board board, int dest_x, int dest_y)
         {
+            int x = piece.X;
+            int y = piece.Y;
+
             int stepX;
             if (dest_x > x)
                 stepX = 1;

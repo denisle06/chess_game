@@ -13,8 +13,11 @@ namespace ChessGame.MoveSet
         {
         }
 
-        public override bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
+        public override bool ValidMove(ChessPiece piece, Board board, int dest_x, int dest_y)
         {
+            int x = piece.X;
+            int y = piece.Y;
+
             if (Math.Abs(x - dest_x) == Math.Abs(y - dest_y)) //if the absolute difference between x and destx, y and desty is the same -> valid move
             {
                 return true;
@@ -22,8 +25,11 @@ namespace ChessGame.MoveSet
             return false;
         }
 
-        public override bool CheckObstruction(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
+        public override bool CheckObstruction(ChessPiece piece, Board board, int dest_x, int dest_y)
         {
+            int x = piece.X;
+            int y = piece.Y;
+
             int stepX;
             if (dest_x > x)
                 stepX = 1;

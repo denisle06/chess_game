@@ -12,13 +12,16 @@ namespace ChessGame.Decorator.MoveSetDecorator
     {
         public LongRangeCatapultDecorator(PieceMoveSet baseMoveSet) : base(baseMoveSet) { }
 
-        public override bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
+        public override bool ValidMove(ChessPiece piece, Board board, int dest_x, int dest_y)
         {
+            int x = piece.X;
+            int y = piece.Y;
+
             int dx = Math.Abs(dest_x - x);
             int dy = Math.Abs(dest_y - y);
 
             if ((dx == 2 && dy <= 0) || (dx == 0 && dy == 2)) return true;
-            return base.ValidMove(piece, board, x, y, dest_x, dest_y);
+            return base.ValidMove(piece, board, dest_x, dest_y);
         }
     }
 }

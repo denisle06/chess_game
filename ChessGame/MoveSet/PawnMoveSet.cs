@@ -15,8 +15,11 @@ namespace ChessGame.MoveSet
         {
         }
 
-        public override bool ValidMove(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y)
+        public override bool ValidMove(ChessPiece piece, Board board, int dest_x, int dest_y)
         {
+            int x = piece.X;
+            int y = piece.Y;
+            
             int direction;
             if (piece.Color == Color.White) direction = 1;
             else direction = -1;
@@ -40,8 +43,10 @@ namespace ChessGame.MoveSet
             return false;
         }
 
-        public override bool CheckObstruction(ChessPiece piece, Board board, int x, int y, int dest_x, int dest_y) //check pawn position from the pawn up
+        public override bool CheckObstruction(ChessPiece piece, Board board, int dest_x, int dest_y) //check pawn position from the pawn up
         {
+            int x = piece.X;
+            int y = piece.Y;
 
             if (piece.Color == Color.White && x == dest_x)
             {

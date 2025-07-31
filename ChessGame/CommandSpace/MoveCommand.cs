@@ -49,7 +49,7 @@ namespace ChessGame.CommandSpace
                     piece.X = location.Item1;
                     piece.Y = location.Item2;
                     _board.ChessGrid[piece.X, piece.Y] = piece;
-                    piece.Moved = true;
+                    piece.Moved += 1;
                     return true;
 
                 case (MoveType.Passant):
@@ -69,8 +69,8 @@ namespace ChessGame.CommandSpace
                     captured_piece.X = piece.X + -1 * direction;
                     _board.ChessGrid[piece.X, piece.Y] = piece;
                     _board.ChessGrid[captured_piece.X, captured_piece.Y] = captured_piece;
-                    piece.Moved = true;
-                    captured_piece.Moved = true;
+                    piece.Moved += 1;
+                    captured_piece.Moved += 1;
                     return true;
 
                 default:
@@ -117,7 +117,7 @@ namespace ChessGame.CommandSpace
             if (piece is King &&
                 _board.ChessGrid[dest_x, dest_y] is Rook &&
                 piece.Color == _board.ChessGrid[dest_x, dest_y].Color &&
-                piece.Moved == false && _board.ChessGrid[dest_x, dest_y].Moved == false) return MoveType.Castling;
+                piece.Moved == 0 && _board.ChessGrid[dest_x, dest_y].Moved == 0) return MoveType.Castling;
 
             return MoveType.Normal;
         }
@@ -178,10 +178,11 @@ namespace ChessGame.CommandSpace
 
                         bool check = GameManager.Instance.InCheck(p);
 
+                        _board.ChessGrid[moved_piece.X, moved_piece.Y] = null;
                         _board.ChessGrid[old_location.Item1, OldLocation.Item2] = moved_piece;
                         moved_piece.X = old_location.Item1;
                         moved_piece.Y = old_location.Item2;
-                        _board.ChessGrid[moved_piece.X, moved_piece.Y] = null;
+                        
 
                         if (check) return false;
 

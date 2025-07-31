@@ -73,6 +73,7 @@ namespace ChessGame
                     command.MovedPiece.Y = command.OldLocation.Item2;
                     _board.ChessGrid[command.OldLocation.Item1, command.OldLocation.Item2] = command.MovedPiece;
                     _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = null;
+                    
                     if (!(command.CapturedPiece == null))
                     {
                         Player opponent = command.CapturedPiece.Color == Color.White ? _whiteP : _blackP;   //re-add the piece back to the player
@@ -82,6 +83,7 @@ namespace ChessGame
                         command.CapturedPiece.Y = command.NewLocation.Item2;
                         _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = command.CapturedPiece;
                     }
+                    command.MovedPiece.Moved -= 1;
                     break;
 
                 case (MoveType.Passant):
@@ -98,16 +100,36 @@ namespace ChessGame
                         command.CapturedPiece.Y = command.OldLocation.Item2;
                         _board.ChessGrid[command.NewLocation.Item1, command.OldLocation.Item2] = command.CapturedPiece;
                     }
+                    command.MovedPiece.Moved -= 1;
                     break;
-                case (MoveType.Castling):
-                    
-                    command.MovedPiece.X = command.OldLocation.Item1;
-                    _board.ChessGrid[command.OldLocation.Item1, command.OldLocation.Item2] = command.MovedPiece;
-                    _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = command.CapturedPiece;
-                    command.CapturedPiece.X = command.NewLocation.Item1;
-                    command.MovedPiece.Moved = false;
-                    command.CapturedPiece.Moved = false;
 
+                case (MoveType.Castling):
+                    int direction = command.NewLocation.Item1 > command.OldLocation.Item1 ? 1 : -1;
+                    int new_kingX = command.OldLocation.Item1 + 2 * direction;
+                    int new_rookX = new_kingX + -1 * direction;
+
+                    // Clear the castled positions
+                    _board.ChessGrid[new_kingX, command.OldLocation.Item2] = null;
+                    _board.ChessGrid[new_rookX, command.OldLocation.Item2] = null;
+
+                    // Restore the king
+                    command.MovedPiece.X = command.OldLocation.Item1;
+                    command.MovedPiece.Y = command.OldLocation.Item2;
+                    _board.ChessGrid[command.MovedPiece.X, command.MovedPiece.Y] = command.MovedPiece;
+
+                    // Restore the rook
+                    command.CapturedPiece.X = command.NewLocation.Item1;
+                    command.CapturedPiece.Y = command.NewLocation.Item2;
+                    _board.ChessGrid[command.CapturedPiece.X, command.CapturedPiece.Y] = command.CapturedPiece;
+
+                    command.MovedPiece.Moved -= 1;
+                    command.CapturedPiece.Moved -= 1;
+
+                    Debug.WriteLine("Clearing positions:");
+                    Debug.WriteLine($" - King new pos: {command.MovedPiece.X}, {command.MovedPiece.Y}");
+                    Debug.WriteLine($" - Rook new pos: {command.CapturedPiece.X}, {command.CapturedPiece.Y}");
+                    Debug.WriteLine($" - King old pos: {command.OldLocation.Item1}{command.OldLocation.Item2}");
+                    Debug.WriteLine($" - Rook original: {command.NewLocation.Item1}, {command.NewLocation.Item2}");
                     break;
 
                 default: break;
@@ -174,23 +196,23 @@ namespace ChessGame
             bool execute = move.Execute(piece, (x, y));
             if (!execute)
             {
-                Debug.WriteLine($"Test movement with move type {move.MoveType} from ({move.OldLocation.Item1}, {move.OldLocation.Item2}) to {(x, y)}. The piece type is {piece.Name}. Move not executed");
+               // Debug.WriteLine($"Test movement with move type {move.MoveType} from ({move.OldLocation.Item1}, {move.OldLocation.Item2}) to {(x, y)}. The piece type is {piece.Name}. Move not executed");
                 return false;
             }
-            if (move.CapturedPiece != null) opp.Pieces.Remove(move.CapturedPiece);  //remove the piece if capture a piece
-            Debug.WriteLine($"Test movement with move type {move.MoveType} from ({move.OldLocation.Item1}, {move.OldLocation.Item2}) to {(x, y)}. The piece type is {piece.Name}. Move executed");
+            if (move.CapturedPiece != null && move.MoveType != MoveType.Castling) opp.Pieces.Remove(move.CapturedPiece);  //remove the piece if capture a piece
+            //Debug.WriteLine($"Test movement with move type {move.MoveType} from ({move.OldLocation.Item1}, {move.OldLocation.Item2}) to {(x, y)}. The piece type is {piece.Name}. Move executed");
             
             if (simulate == true)
             {
                 if (InCheck(p))
                 {
-                    Debug.WriteLine($"Return false, move is not added to pos_list");
+                    //Debug.WriteLine($"Return false, move is not added to pos_list");
                     Undo(move);
                     return false;
                 }
                 else
                 {
-                    Debug.WriteLine($"Return true, move is added to pos_list");
+                    //Debug.WriteLine($"Return true, move is added to pos_list");
                     Undo(move);
                     return true;
                 }

@@ -14,7 +14,7 @@ namespace ChessGame.Pieces
         protected int _y;
         protected Color _color;
         protected string _name;
-        protected bool _moved;
+        protected int _moved;
         protected PieceMoveSet _moveset;
         //protected MoveCommand _moveCommand;
 
@@ -24,7 +24,7 @@ namespace ChessGame.Pieces
             _y = y;
             _color = color;
             _name = makeName();
-            _moved = false;
+            _moved = 0;
         }
 
 
@@ -52,7 +52,7 @@ namespace ChessGame.Pieces
 
         public Color Color { get { return _color; } }
 
-        public bool Moved { get { return _moved; } set { _moved = value; } }
+        public int Moved { get { return _moved; } set { _moved = value; } }
 
         public PieceMoveSet MoveSet
         {

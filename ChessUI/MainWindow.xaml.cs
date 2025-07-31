@@ -29,7 +29,7 @@ namespace ChessUI
         private readonly Image[,] pieceImages = new Image[8, 8];
         private readonly Rectangle[,] highlights = new Rectangle[8, 8];
 
-        private GameManager _game;
+        private GameManager _game; 
         private (int, int)? selected_pos;
         private List<(int, int)> avai_moves;
         public MainWindow()
@@ -37,7 +37,7 @@ namespace ChessUI
             InitializeComponent();
             InitializeBoard();
 
-            _game = new GameManager();
+            _game = new GameManager(); //instantiate 1 time only
             DrawBoard(_game.Board);
         }
 

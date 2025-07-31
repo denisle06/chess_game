@@ -40,13 +40,43 @@ namespace ChessGame.CommandSpace
         {
             if ((location.Item1, location.Item2) == (piece.X, piece.Y)) return false;
             bool check = ConditionCheck();
-            if (!check) return false; 
+            if (!check) return false;
 
-            _board.ChessGrid[piece.X, piece.Y] = null;
-            piece.X = location.Item1;
-            piece.Y = location.Item2;
-            _board.ChessGrid[piece.X, piece.Y] = piece;
-            return true;
+            switch (_moveType)
+            {
+                case (MoveType.Normal):
+                    _board.ChessGrid[piece.X, piece.Y] = null;
+                    piece.X = location.Item1;
+                    piece.Y = location.Item2;
+                    _board.ChessGrid[piece.X, piece.Y] = piece;
+                    piece.Moved = true;
+                    return true;
+
+                case (MoveType.Passant):
+                    captured_piece = _board.ChessGrid[location.Item1, piece.Y];
+                    _board.ChessGrid[piece.X, piece.Y] = null;
+                    _board.ChessGrid[location.Item1, piece.Y] = null;
+                    piece.X = location.Item1;
+                    piece.Y = location.Item2;
+                    _board.ChessGrid[piece.X, piece.Y] = piece;
+                    return true;
+
+                case (MoveType.Castling):
+                    int direction = captured_piece.X > piece.X ? 1 : -1;
+                    _board.ChessGrid[piece.X, piece.Y] = null;
+                    _board.ChessGrid[captured_piece.X, captured_piece.Y] = null;
+                    piece.X = piece.X + 2 * direction;
+                    captured_piece.X = piece.X + -1 * direction;
+                    _board.ChessGrid[piece.X, piece.Y] = piece;
+                    _board.ChessGrid[captured_piece.X, captured_piece.Y] = captured_piece;
+                    piece.Moved = true;
+                    captured_piece.Moved = true;
+                    return true;
+
+                default:
+                    return false;
+
+            }    
         }
 
         public MoveType CheckMoveType(ChessPiece piece, (int, int) location)
@@ -64,7 +94,8 @@ namespace ChessGame.CommandSpace
                         _board.ChessGrid[dest_x, piece.Y] != null &&
                         _board.ChessGrid[dest_x, piece.Y].Color != piece.Color &&
                         _board.ChessGrid[dest_x, dest_y] == null &&
-                        _board.ChessGrid[dest_x, piece.Y] is Pawn &&
+                        _board.ChessGrid[dest_x, piece.Y] is Pawn Wpawn &&
+                        Wpawn.JustMoveTwo == true &&
                         Math.Abs(dest_x - piece.X) == 1) return MoveType.Passant; //condition to recognize en passant
                 }
 
@@ -76,8 +107,10 @@ namespace ChessGame.CommandSpace
                         _board.ChessGrid[dest_x, piece.Y] != null &&
                         _board.ChessGrid[dest_x, piece.Y].Color != piece.Color &&
                         _board.ChessGrid[dest_x, dest_y] == null &&
-                        _board.ChessGrid[dest_x, piece.Y] is Pawn &&
-                        Math.Abs(dest_x - piece.X) == 1) return MoveType.Passant;
+                        _board.ChessGrid[dest_x, piece.Y] is Pawn Bpawn &&
+                        Bpawn.JustMoveTwo == true
+                        && Math.Abs(dest_x - piece.X) == 1
+                        ) return MoveType.Passant;
                 }
             }
 
@@ -107,6 +140,55 @@ namespace ChessGame.CommandSpace
 
                     if (valid && clear && capture) return true;
                     else return false;
+
+                case MoveType.Passant:
+                        return true;
+
+                case MoveType.Castling:
+                    Player p = GameManager.Instance.WhiteP.Color == MovedPiece.Color ? GameManager.Instance.WhiteP : GameManager.Instance.BlackP;    
+
+                    int x = moved_piece.X;
+                    int y = moved_piece.Y;
+
+                    int stepX;
+                    if (new_location.Item1 > x) stepX = 1;
+                    else if (new_location.Item1 < x) stepX = -1;
+                    else stepX = 0;
+
+                    int stepY;
+                    if (new_location.Item2 > y) stepY = 1;
+                    else if (new_location.Item2 < y) stepY = -1;
+                    else stepY = 0;
+
+
+                    int currentX = x + stepX;
+                    int currentY = y + stepY;
+
+                    while (currentX != new_location.Item1 || currentY != new_location.Item2)
+                    {
+                        if (currentX < 0 || currentX >= 8 || currentY < 0 || currentY >= 8) //stop out of bound checking
+                            return false;
+
+                        if (_board.ChessGrid[currentX, currentY] != null) return false;
+
+                        _board.ChessGrid[old_location.Item1, old_location.Item2] = null;
+                        moved_piece.X = currentX;
+                        moved_piece.Y = currentY;
+                        _board.ChessGrid[moved_piece.X, moved_piece.Y] = moved_piece;
+
+                        bool check = GameManager.Instance.InCheck(p);
+
+                        _board.ChessGrid[old_location.Item1, OldLocation.Item2] = moved_piece;
+                        moved_piece.X = old_location.Item1;
+                        moved_piece.Y = old_location.Item2;
+                        _board.ChessGrid[moved_piece.X, moved_piece.Y] = null;
+
+                        if (check) return false;
+
+                        currentX += stepX;
+                        currentY += stepY;
+                    }
+                    return true;
 
                 default:
                     return false;

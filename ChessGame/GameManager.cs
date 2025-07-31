@@ -16,6 +16,8 @@ namespace ChessGame
     public enum Color { White, Black }
     public class GameManager
     {
+        public static GameManager Instance { get; private set; } //singleton
+
         private Board _board;
         private Player _whiteP;
         private Player _blackP;
@@ -24,6 +26,10 @@ namespace ChessGame
 
         public GameManager() 
         {
+            if (Instance != null)
+                throw new Exception("Only one GameManager allowed!");
+            Instance = this;
+
             this._board = new Board();
             this._whiteP = new Player(Color.White, _board);
             this._blackP = new Player(Color.Black, _board);
@@ -60,18 +66,51 @@ namespace ChessGame
 
         public void Undo(MoveCommand command) //undo the command
         {
-            command.MovedPiece.X = command.OldLocation.Item1;
-            command.MovedPiece.Y = command.OldLocation.Item2;
-            _board.ChessGrid[command.OldLocation.Item1, command.OldLocation.Item2] = command.MovedPiece;
-            _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = null;
-            if (!(command.CapturedPiece == null))
+            switch (command.MoveType) 
             {
-                Player opponent = command.CapturedPiece.Color == Color.White ? _whiteP : _blackP;   //re-add the piece back to the player
-                if (!opponent.Pieces.Contains(command.CapturedPiece)) opponent.Pieces.Add(command.CapturedPiece);
+                case (MoveType.Normal):
+                    command.MovedPiece.X = command.OldLocation.Item1;
+                    command.MovedPiece.Y = command.OldLocation.Item2;
+                    _board.ChessGrid[command.OldLocation.Item1, command.OldLocation.Item2] = command.MovedPiece;
+                    _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = null;
+                    if (!(command.CapturedPiece == null))
+                    {
+                        Player opponent = command.CapturedPiece.Color == Color.White ? _whiteP : _blackP;   //re-add the piece back to the player
+                        if (!opponent.Pieces.Contains(command.CapturedPiece)) opponent.Pieces.Add(command.CapturedPiece);
 
-                command.CapturedPiece.X = command.NewLocation.Item1;
-                command.CapturedPiece.Y = command.NewLocation.Item2;
-                _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = command.CapturedPiece;
+                        command.CapturedPiece.X = command.NewLocation.Item1;
+                        command.CapturedPiece.Y = command.NewLocation.Item2;
+                        _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = command.CapturedPiece;
+                    }
+                    break;
+
+                case (MoveType.Passant):
+                    command.MovedPiece.X = command.OldLocation.Item1;
+                    command.MovedPiece.Y = command.OldLocation.Item2;
+                    _board.ChessGrid[command.OldLocation.Item1, command.OldLocation.Item2] = command.MovedPiece;
+                    _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = null;
+                    if (!(command.CapturedPiece == null))
+                    {
+                        Player opponent = command.CapturedPiece.Color == Color.White ? _whiteP : _blackP;
+                        if (!opponent.Pieces.Contains(command.CapturedPiece)) opponent.Pieces.Add(command.CapturedPiece);
+
+                        command.CapturedPiece.X = command.NewLocation.Item1;
+                        command.CapturedPiece.Y = command.OldLocation.Item2;
+                        _board.ChessGrid[command.NewLocation.Item1, command.OldLocation.Item2] = command.CapturedPiece;
+                    }
+                    break;
+                case (MoveType.Castling):
+                    
+                    command.MovedPiece.X = command.OldLocation.Item1;
+                    _board.ChessGrid[command.OldLocation.Item1, command.OldLocation.Item2] = command.MovedPiece;
+                    _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = command.CapturedPiece;
+                    command.CapturedPiece.X = command.NewLocation.Item1;
+                    command.MovedPiece.Moved = false;
+                    command.CapturedPiece.Moved = false;
+
+                    break;
+
+                default: break;
             }
         }
 
@@ -134,7 +173,8 @@ namespace ChessGame
 
             bool execute = move.Execute(piece, (x, y));
             if (!execute)
-            { 
+            {
+                Debug.WriteLine($"Test movement with move type {move.MoveType} from ({move.OldLocation.Item1}, {move.OldLocation.Item2}) to {(x, y)}. The piece type is {piece.Name}. Move not executed");
                 return false;
             }
             if (move.CapturedPiece != null) opp.Pieces.Remove(move.CapturedPiece);  //remove the piece if capture a piece
@@ -162,7 +202,15 @@ namespace ChessGame
                     Undo(move);
                     return false;
                 }
-                else return true;             
+                else 
+                {
+                    foreach (var pawn in p.Pieces.Concat(opp.Pieces).OfType<Pawn>())
+                        pawn.JustMoveTwo = false;
+                    if (move.MovedPiece is Pawn moved_pawn && Math.Abs(move.OldLocation.Item2 - move.NewLocation.Item2) == 2) moved_pawn.JustMoveTwo = true;
+                    
+                    return true;
+                }
+                            
             }
         }
 

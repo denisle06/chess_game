@@ -31,6 +31,7 @@ namespace ChessGame
         private bool _stop = false; //flag to stop the game 
         private Winner _winner = Winner.None;
         private EndReason _endReason;
+        private int fifty_moves = 0;
 
         public GameManager() 
         {
@@ -78,6 +79,20 @@ namespace ChessGame
                 _endReason = EndReason.Stalemate;
                 _stop = true;
                 Debug.WriteLine("Stalemate!");
+                Debug.WriteLine("Draw.");
+            }
+            else if (fifty_moves == 50)
+            {
+                _endReason = EndReason.FiftyMoveRule;
+                _stop = true;
+                Debug.WriteLine("Fifty Move!");
+                Debug.WriteLine("Draw.");
+            }
+            else if (HasInsufficientMaterial(BlackP) && HasInsufficientMaterial(WhiteP))
+            {
+                _endReason = EndReason.InsufficientMaterial;
+                _stop = true;
+                Debug.WriteLine("Insufficient Material!");
                 Debug.WriteLine("Draw.");
             }
         }
@@ -269,7 +284,8 @@ namespace ChessGame
                     foreach (var pawn in p.Pieces.Concat(opp.Pieces).OfType<Pawn>())
                         pawn.JustMoveTwo = false;
                     if (move.MovedPiece is Pawn moved_pawn && Math.Abs(move.OldLocation.Item2 - move.NewLocation.Item2) == 2) moved_pawn.JustMoveTwo = true;
-                    
+                    if (!(move.MovedPiece is Pawn) || move.CapturedPiece != null) fifty_moves += 1; //fifty move rule
+                    else fifty_moves = 0;
 
                     return true;
                 }
@@ -327,6 +343,25 @@ namespace ChessGame
             {
                 return true;
             }
+            return false;
+        }
+
+        private bool HasInsufficientMaterial(Player player)
+        {
+            List<ChessPiece> pieces = player.Pieces;
+
+            // Case 1: Lone king
+            if (pieces.Count == 1 && pieces[0] is King)
+                return true;
+
+            // Case 2: King and Bishop
+            if (pieces.Count == 2 && pieces.Any(p => p is King) && pieces.Any(p => p is Bishop))
+                return true;
+
+            // Case 3: King and Knight
+            if (pieces.Count == 2 && pieces.Any(p => p is King) && pieces.Any(p => p is Knight))
+                return true;
+
             return false;
         }
 

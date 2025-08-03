@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\gameovermenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\gameovermenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\gameovermenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\gameovermenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,6 +13,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\commandspace\\movecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\commandspace\\movecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\gameovermenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\gameovermenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\gameovermenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\gameovermenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -174,17 +174,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\GameManager.cs",
               "RelativeDocumentMoniker": "ChessGame\\GameManager.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\GameManager.cs",
-              "RelativeToolTip": "ChessGame\\GameManager.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAADsAAAAMAAAAAAAAAA==",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\GameManager.cs*",
+              "RelativeToolTip": "ChessGame\\GameManager.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T07:40:35.517Z",
               "IsPinned": true,
@@ -192,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "MoveCommand.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\CommandSpace\\MoveCommand.cs",
               "RelativeDocumentMoniker": "ChessGame\\CommandSpace\\MoveCommand.cs",
@@ -206,13 +206,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "ChessUI\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\MainWindow.xaml.cs",
               "RelativeToolTip": "ChessUI\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAuwLMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAqwHQAAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-23T15:26:13.465Z",
               "IsPinned": true,
@@ -220,17 +220,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "GameOverMenu.xaml.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\GameOverMenu.xaml.cs",
               "RelativeDocumentMoniker": "ChessUI\\GameOverMenu.xaml.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\GameOverMenu.xaml.cs*",
-              "RelativeToolTip": "ChessUI\\GameOverMenu.xaml.cs*",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAgwCAAAAAlAAAAAAAAAA==",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\GameOverMenu.xaml.cs",
+              "RelativeToolTip": "ChessUI\\GameOverMenu.xaml.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDYAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-01T08:58:04.625Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -245,15 +244,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "GameOverMenu.xaml",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\GameOverMenu.xaml",
               "RelativeDocumentMoniker": "ChessUI\\GameOverMenu.xaml",
               "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\GameOverMenu.xaml",
               "RelativeToolTip": "ChessUI\\GameOverMenu.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-01T08:54:32.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-01T08:54:32.228Z"
             },
             {
               "$type": "Document",
@@ -287,8 +285,7 @@
               "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\App.xaml",
               "RelativeToolTip": "ChessUI\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-01T08:11:11.621Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-01T08:11:11.621Z"
             },
             {
               "$type": "Document",

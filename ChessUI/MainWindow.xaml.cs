@@ -115,11 +115,19 @@ namespace ChessUI
                     Player p = _game.Turn == ChessGame.Color.White ? _game.WhiteP : _game.BlackP;
                     Player opp = _game.Turn == ChessGame.Color.White ? _game.BlackP : _game.WhiteP;
                     _game.CreateAndExecuteCommand(_game.Board.ChessGrid[row, col], x, y, p, opp, false);
+                    if (_game.Command.MoveType == MoveType.Promotion)
+                    {
+                        ShowPromotionMenu(_game.Command.MovedPiece);
+                        return;
+                    }
                     _game.EvaluateEndGame();
-                    if (GameManager.Instance.Stop == true) ShowGameOver();
-                    _game.ChangeTurn();
+                    if (GameManager.Instance.Stop == true) 
+                    {
+                        ShowGameOver();
+                        return;
+                    }
                     
-                    
+                    _game.ChangeTurn();                   
                     DrawBoard(_game.Board);   
                 }
             }
@@ -127,6 +135,35 @@ namespace ChessUI
             selected_pos = null;
             HideHighlights();
         }
+
+        private void ShowPromotionMenu(ChessPiece pawn)
+        {
+            PromotionMenu promotionMenu = new PromotionMenu();
+            MenuContainer.Content = promotionMenu;
+
+            promotionMenu.PieceSelected += (PieceType type) =>
+            {
+                MenuContainer.Content = null;
+
+                ChessPiece newPiece = PieceBuilder.CreatePiece(type.ToString(), pawn.X, pawn.Y, pawn.Color);
+                GameManager.Instance.Board.ChessGrid[pawn.X, pawn.Y] = newPiece;
+
+                Player player = GameManager.Instance.WhiteP.Color == pawn.Color ? GameManager.Instance.WhiteP : GameManager.Instance.BlackP;
+                player.Pieces.Remove(pawn);
+                player.Pieces.Add(newPiece);
+
+                _game.EvaluateEndGame();
+                if (GameManager.Instance.Stop == true)
+                {
+                    ShowGameOver();
+                    return;
+                }
+
+                _game.ChangeTurn();
+                DrawBoard(GameManager.Instance.Board);
+            };
+        }
+
 
         private void ShowHighlights()
         {

@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,48 +11,44 @@
       "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\commandspace\\movecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\gameovermenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\gameovermenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\gameovermenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\gameovermenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\decorator\\playerdecorator\\playerdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\decorator\\playerdecorator\\playerdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\moveset\\pawnmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\moveset\\pawnmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\promotionmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\promotionmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\moveset\\kingmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\moveset\\kingmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\promotionmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\promotionmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\piecebuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\piecebuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\knight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\knight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\moveset\\bishopmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\moveset\\bishopmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\chesspiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\chesspiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\bishop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\bishop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\knight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\knight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\commandspace\\exitcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\commandspace\\exitcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\piecebuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\piecebuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\queen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\queen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\rook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\rook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -71,20 +63,44 @@
       "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\moveset\\bishopmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\moveset\\bishopmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\gameovermenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\gameovermenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\moveset\\kingmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\moveset\\kingmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\promotionmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\promotionmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\promotionmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\promotionmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\images.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\images.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\gameovermenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\gameovermenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\bishop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\bishop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\commandspace\\exitcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\commandspace\\exitcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\moveset\\knightmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\moveset\\knightmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\moveset\\pawnmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\moveset\\pawnmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\moveset\\piecemoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -99,14 +115,6 @@
       "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\moveset\\rookmoveset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\rook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\rook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\queen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\queen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\pieces\\king.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\pieces\\king.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -117,10 +125,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessui\\images.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6569A735-A742-4C99-BBB4-6BFFA98C8B78}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\images.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\upgrade\\pieceupgrade\\pieceupgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -159,10 +163,6 @@
       "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\decorator\\idecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\decorator\\playerdecorator\\playerdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\decorator\\playerdecorator\\playerdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|c:\\swinburne class\\object oriented programming\\repo\\chessgame\\chessgame\\decorator\\boarddecorator\\boarddecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C06C26A-D777-42B2-B856-51159E0E9570}|ChessGame\\ChessGame.csproj|solutionrelative:chessgame\\decorator\\boarddecorator\\boarddecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -174,17 +174,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\GameManager.cs",
               "RelativeDocumentMoniker": "ChessGame\\GameManager.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\GameManager.cs*",
-              "RelativeToolTip": "ChessGame\\GameManager.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAANAAAAAAAAAA==",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\GameManager.cs",
+              "RelativeToolTip": "ChessGame\\GameManager.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAwHwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T07:40:35.517Z",
               "IsPinned": true,
@@ -192,13 +192,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MoveCommand.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\CommandSpace\\MoveCommand.cs",
               "RelativeDocumentMoniker": "ChessGame\\CommandSpace\\MoveCommand.cs",
               "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\CommandSpace\\MoveCommand.cs",
               "RelativeToolTip": "ChessGame\\CommandSpace\\MoveCommand.cs",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAowEUAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAqwNgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-06T10:36:36.239Z",
               "IsPinned": true,
@@ -206,13 +206,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "ChessUI\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\MainWindow.xaml.cs",
               "RelativeToolTip": "ChessUI\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAqwHQAAABoAAAAAAAAAA==",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAhwJ8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-23T15:26:13.465Z",
               "IsPinned": true,
@@ -220,112 +220,86 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 15,
               "Title": "GameOverMenu.xaml.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\GameOverMenu.xaml.cs",
               "RelativeDocumentMoniker": "ChessUI\\GameOverMenu.xaml.cs",
               "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\GameOverMenu.xaml.cs",
               "RelativeToolTip": "ChessUI\\GameOverMenu.xaml.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDYAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwCgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-01T08:58:04.625Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "ChessUI\\MainWindow.xaml",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\MainWindow.xaml",
-              "RelativeToolTip": "ChessUI\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-02T17:38:38.634Z"
+              "Title": "KingMoveSet.cs",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\KingMoveSet.cs",
+              "RelativeDocumentMoniker": "ChessGame\\MoveSet\\KingMoveSet.cs",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\KingMoveSet.cs",
+              "RelativeToolTip": "ChessGame\\MoveSet\\KingMoveSet.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T01:18:43.339Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "GameOverMenu.xaml",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\GameOverMenu.xaml",
-              "RelativeDocumentMoniker": "ChessUI\\GameOverMenu.xaml",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\GameOverMenu.xaml",
-              "RelativeToolTip": "ChessUI\\GameOverMenu.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-01T08:54:32.228Z"
+              "Title": "PawnMoveSet.cs",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\PawnMoveSet.cs",
+              "RelativeDocumentMoniker": "ChessGame\\MoveSet\\PawnMoveSet.cs",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\PawnMoveSet.cs",
+              "RelativeToolTip": "ChessGame\\MoveSet\\PawnMoveSet.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAswEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T02:50:31.162Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PromotionMenu.xaml.cs",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\PromotionMenu.xaml.cs",
-              "RelativeDocumentMoniker": "ChessUI\\PromotionMenu.xaml.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\PromotionMenu.xaml.cs",
-              "RelativeToolTip": "ChessUI\\PromotionMenu.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "PlayerDecorator.cs",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Decorator\\PlayerDecorator\\PlayerDecorator.cs",
+              "RelativeDocumentMoniker": "ChessGame\\Decorator\\PlayerDecorator\\PlayerDecorator.cs",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Decorator\\PlayerDecorator\\PlayerDecorator.cs",
+              "RelativeToolTip": "ChessGame\\Decorator\\PlayerDecorator\\PlayerDecorator.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T17:38:35.044Z"
+              "WhenOpened": "2025-07-19T02:12:07.885Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "PromotionMenu.xaml",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\PromotionMenu.xaml",
-              "RelativeDocumentMoniker": "ChessUI\\PromotionMenu.xaml",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\PromotionMenu.xaml",
-              "RelativeToolTip": "ChessUI\\PromotionMenu.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-01T04:43:26.443Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\App.xaml",
-              "RelativeDocumentMoniker": "ChessUI\\App.xaml",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\App.xaml",
-              "RelativeToolTip": "ChessUI\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-01T08:11:11.621Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ExitCommand.cs",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\CommandSpace\\ExitCommand.cs",
-              "RelativeDocumentMoniker": "ChessGame\\CommandSpace\\ExitCommand.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\CommandSpace\\ExitCommand.cs",
-              "RelativeToolTip": "ChessGame\\CommandSpace\\ExitCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T15:43:30.638Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Bishop.cs",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Bishop.cs",
-              "RelativeDocumentMoniker": "ChessGame\\Pieces\\Bishop.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Bishop.cs",
-              "RelativeToolTip": "ChessGame\\Pieces\\Bishop.cs",
+              "Title": "BishopMoveSet.cs",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\BishopMoveSet.cs",
+              "RelativeDocumentMoniker": "ChessGame\\MoveSet\\BishopMoveSet.cs",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\BishopMoveSet.cs",
+              "RelativeToolTip": "ChessGame\\MoveSet\\BishopMoveSet.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T01:18:18.608Z"
+              "WhenOpened": "2025-07-31T01:18:44.498Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "ChessPiece.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\ChessPiece.cs",
               "RelativeDocumentMoniker": "ChessGame\\Pieces\\ChessPiece.cs",
               "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\ChessPiece.cs",
               "RelativeToolTip": "ChessGame\\Pieces\\ChessPiece.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAYwDAAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T10:34:32.192Z"
+              "WhenOpened": "2025-06-06T10:34:32.192Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "Knight.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Knight.cs",
               "RelativeDocumentMoniker": "ChessGame\\Pieces\\Knight.cs",
@@ -333,7 +307,8 @@
               "RelativeToolTip": "ChessGame\\Pieces\\Knight.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T01:18:20.983Z"
+              "WhenOpened": "2025-07-31T01:18:20.983Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -345,11 +320,38 @@
               "RelativeToolTip": "ChessGame\\Pieces\\PieceBuilder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T01:18:22.076Z"
+              "WhenOpened": "2025-07-31T01:18:22.076Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
+              "Title": "Queen.cs",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Queen.cs",
+              "RelativeDocumentMoniker": "ChessGame\\Pieces\\Queen.cs",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Queen.cs",
+              "RelativeToolTip": "ChessGame\\Pieces\\Queen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T08:16:38.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Rook.cs",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Rook.cs",
+              "RelativeDocumentMoniker": "ChessGame\\Pieces\\Rook.cs",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Rook.cs",
+              "RelativeToolTip": "ChessGame\\Pieces\\Rook.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T07:50:09.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Board.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Board.cs",
               "RelativeDocumentMoniker": "ChessGame\\Board.cs",
@@ -357,23 +359,25 @@
               "RelativeToolTip": "ChessGame\\Board.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T13:03:11.669Z"
+              "WhenOpened": "2025-07-31T13:03:11.669Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Player.cs",
               "RelativeDocumentMoniker": "ChessGame\\Player.cs",
               "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Player.cs",
               "RelativeToolTip": "ChessGame\\Player.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAMwD4AAACEAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAAGIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T07:16:15.17Z"
+              "WhenOpened": "2025-06-09T07:16:15.17Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Program.cs",
               "RelativeDocumentMoniker": "ChessGame\\Program.cs",
@@ -381,35 +385,108 @@
               "RelativeToolTip": "ChessGame\\Program.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T13:03:14.037Z"
+              "WhenOpened": "2025-07-31T13:03:14.037Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "KingMoveSet.cs",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\KingMoveSet.cs",
-              "RelativeDocumentMoniker": "ChessGame\\MoveSet\\KingMoveSet.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\KingMoveSet.cs",
-              "RelativeToolTip": "ChessGame\\MoveSet\\KingMoveSet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Images.cs",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\Images.cs",
+              "RelativeDocumentMoniker": "ChessUI\\Images.cs",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\Images.cs",
+              "RelativeToolTip": "ChessUI\\Images.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T01:18:43.339Z"
+              "WhenOpened": "2025-07-24T02:43:36.859Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "BishopMoveSet.cs",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\BishopMoveSet.cs",
-              "RelativeDocumentMoniker": "ChessGame\\MoveSet\\BishopMoveSet.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\BishopMoveSet.cs",
-              "RelativeToolTip": "ChessGame\\MoveSet\\BishopMoveSet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "PromotionMenu.xaml",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\PromotionMenu.xaml",
+              "RelativeDocumentMoniker": "ChessUI\\PromotionMenu.xaml",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\PromotionMenu.xaml",
+              "RelativeToolTip": "ChessUI\\PromotionMenu.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-01T04:43:26.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PromotionMenu.xaml.cs",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\PromotionMenu.xaml.cs",
+              "RelativeDocumentMoniker": "ChessUI\\PromotionMenu.xaml.cs",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\PromotionMenu.xaml.cs",
+              "RelativeToolTip": "ChessUI\\PromotionMenu.xaml.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwBgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T01:18:44.498Z"
+              "WhenOpened": "2025-08-02T17:38:35.044Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
+              "Title": "GameOverMenu.xaml",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\GameOverMenu.xaml",
+              "RelativeDocumentMoniker": "ChessUI\\GameOverMenu.xaml",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\GameOverMenu.xaml",
+              "RelativeToolTip": "ChessUI\\GameOverMenu.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-01T08:54:32.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "ChessUI\\MainWindow.xaml",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\MainWindow.xaml",
+              "RelativeToolTip": "ChessUI\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-02T17:38:38.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\App.xaml",
+              "RelativeDocumentMoniker": "ChessUI\\App.xaml",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\App.xaml",
+              "RelativeToolTip": "ChessUI\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-01T08:11:11.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ExitCommand.cs",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\CommandSpace\\ExitCommand.cs",
+              "RelativeDocumentMoniker": "ChessGame\\CommandSpace\\ExitCommand.cs",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\CommandSpace\\ExitCommand.cs",
+              "RelativeToolTip": "ChessGame\\CommandSpace\\ExitCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T15:43:30.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Bishop.cs",
+              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Bishop.cs",
+              "RelativeDocumentMoniker": "ChessGame\\Pieces\\Bishop.cs",
+              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Bishop.cs",
+              "RelativeToolTip": "ChessGame\\Pieces\\Bishop.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T01:18:18.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "KnightMoveSet.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\KnightMoveSet.cs",
               "RelativeDocumentMoniker": "ChessGame\\MoveSet\\KnightMoveSet.cs",
@@ -421,7 +498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "QueenMoveSet.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\QueenMoveSet.cs",
               "RelativeDocumentMoniker": "ChessGame\\MoveSet\\QueenMoveSet.cs",
@@ -433,19 +510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Rook.cs",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Rook.cs",
-              "RelativeDocumentMoniker": "ChessGame\\Pieces\\Rook.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Rook.cs",
-              "RelativeToolTip": "ChessGame\\Pieces\\Rook.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T07:50:09.703Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "PieceMoveSet.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\PieceMoveSet.cs",
               "RelativeDocumentMoniker": "ChessGame\\MoveSet\\PieceMoveSet.cs",
@@ -457,31 +522,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "PawnMoveSet.cs",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\PawnMoveSet.cs",
-              "RelativeDocumentMoniker": "ChessGame\\MoveSet\\PawnMoveSet.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\PawnMoveSet.cs",
-              "RelativeToolTip": "ChessGame\\MoveSet\\PawnMoveSet.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAswEIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T02:50:31.162Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Queen.cs",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Queen.cs",
-              "RelativeDocumentMoniker": "ChessGame\\Pieces\\Queen.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\Queen.cs",
-              "RelativeToolTip": "ChessGame\\Pieces\\Queen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T08:16:38.279Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "RookMoveSet.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\MoveSet\\RookMoveSet.cs",
               "RelativeDocumentMoniker": "ChessGame\\MoveSet\\RookMoveSet.cs",
@@ -493,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "King.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Pieces\\King.cs",
               "RelativeDocumentMoniker": "ChessGame\\Pieces\\King.cs",
@@ -505,7 +546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "MoveSetDecorator.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Decorator\\MoveSetDecorator\\MoveSetDecorator.cs",
               "RelativeDocumentMoniker": "ChessGame\\Decorator\\MoveSetDecorator\\MoveSetDecorator.cs",
@@ -517,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "ChessUI\\AssemblyInfo.cs",
@@ -529,19 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Images.cs",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\Images.cs",
-              "RelativeDocumentMoniker": "ChessUI\\Images.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessUI\\Images.cs",
-              "RelativeToolTip": "ChessUI\\Images.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T02:43:36.859Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "DiagonalPawn.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Upgrade\\PieceUpgrade\\DiagonalPawn.cs",
               "RelativeDocumentMoniker": "ChessGame\\Upgrade\\PieceUpgrade\\DiagonalPawn.cs",
@@ -553,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "AgileKing.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Upgrade\\PieceUpgrade\\AgileKing.cs",
               "RelativeDocumentMoniker": "ChessGame\\Upgrade\\PieceUpgrade\\AgileKing.cs",
@@ -565,7 +594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "AlternatingBishop.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Upgrade\\PieceUpgrade\\AlternatingBishop.cs",
               "RelativeDocumentMoniker": "ChessGame\\Upgrade\\PieceUpgrade\\AlternatingBishop.cs",
@@ -577,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "LongRangeCatapult.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Upgrade\\PieceUpgrade\\LongRangeCatapult.cs",
               "RelativeDocumentMoniker": "ChessGame\\Upgrade\\PieceUpgrade\\LongRangeCatapult.cs",
@@ -589,7 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "PieceUpgrade.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Upgrade\\PieceUpgrade\\PieceUpgrade.cs",
               "RelativeDocumentMoniker": "ChessGame\\Upgrade\\PieceUpgrade\\PieceUpgrade.cs",
@@ -601,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "SpeedyHorse.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Upgrade\\PieceUpgrade\\SpeedyHorse.cs",
               "RelativeDocumentMoniker": "ChessGame\\Upgrade\\PieceUpgrade\\SpeedyHorse.cs",
@@ -613,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "IUpgrade.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Upgrade\\IUpgrade.cs",
               "RelativeDocumentMoniker": "ChessGame\\Upgrade\\IUpgrade.cs",
@@ -625,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "MoveSetDecoratorFactory.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Decorator\\MoveSetDecorator\\MoveSetDecoratorFactory.cs",
               "RelativeDocumentMoniker": "ChessGame\\Decorator\\MoveSetDecorator\\MoveSetDecoratorFactory.cs",
@@ -637,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "IDecorator.cs",
               "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Decorator\\IDecorator.cs",
               "RelativeDocumentMoniker": "ChessGame\\Decorator\\IDecorator.cs",
@@ -646,18 +675,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-21T03:43:16.752Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "PlayerDecorator.cs",
-              "DocumentMoniker": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Decorator\\PlayerDecorator\\PlayerDecorator.cs",
-              "RelativeDocumentMoniker": "ChessGame\\Decorator\\PlayerDecorator\\PlayerDecorator.cs",
-              "ToolTip": "C:\\Swinburne Class\\Object Oriented Programming\\Repo\\ChessGame\\ChessGame\\Decorator\\PlayerDecorator\\PlayerDecorator.cs",
-              "RelativeToolTip": "ChessGame\\Decorator\\PlayerDecorator\\PlayerDecorator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-19T02:12:07.885Z"
             },
             {
               "$type": "Document",

@@ -19,6 +19,7 @@ namespace ChessGame.CommandSpace
         MoveType _moveType;
         ChessPiece moved_piece = null;
         ChessPiece captured_piece = null;
+        ChessPiece new_piece = null;
         (int, int) old_location; //for undo
         (int, int) new_location;
 

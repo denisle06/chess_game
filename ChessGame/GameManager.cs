@@ -19,7 +19,9 @@ namespace ChessGame
 
     public enum Option { Restart, Exit, Continue}
 
-    public enum EndReason { None, Checkmate, Stalemate, FiftyMoveRule, InsufficientMaterial, ThreefoldRepetition}
+    public enum EndReason { None, Checkmate, Stalemate, FiftyMoveRule, InsufficientMaterial}
+
+    public enum PieceType { Queen, Bishop, Rook, Knight}
     public class GameManager
     {
         public static GameManager Instance { get; private set; } //singleton
@@ -32,6 +34,7 @@ namespace ChessGame
         private Winner _winner = Winner.None;
         private EndReason _endReason;
         private int fifty_moves = 0;
+        private MoveCommand _justCommand;
 
         public GameManager() 
         {
@@ -281,6 +284,7 @@ namespace ChessGame
                 }
                 else 
                 {
+                    _justCommand = move;
                     foreach (var pawn in p.Pieces.Concat(opp.Pieces).OfType<Pawn>())
                         pawn.JustMoveTwo = false;
                     if (move.MovedPiece is Pawn moved_pawn && Math.Abs(move.OldLocation.Item2 - move.NewLocation.Item2) == 2) moved_pawn.JustMoveTwo = true;
@@ -416,6 +420,11 @@ namespace ChessGame
         public EndReason Reason
         {
             get { return _endReason; }
+        }
+
+        public MoveCommand Command
+        {
+            get { return _justCommand; }
         }
     }
 }

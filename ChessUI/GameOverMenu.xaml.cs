@@ -51,7 +51,6 @@ namespace ChessUI
                 EndReason.Stalemate => $"Stalemate, {GameManager.Instance.Turn} can't move!",
                 EndReason.InsufficientMaterial => $"Draw due to insufficient materials",
                 EndReason.FiftyMoveRule => $"Draw due to fifty move rule",
-                EndReason.ThreefoldRepetition => $"Draw due to threefold repetitions",
                 EndReason.None => $"Unknown reason",
             };
         }

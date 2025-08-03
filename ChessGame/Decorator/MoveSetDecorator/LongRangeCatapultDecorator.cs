@@ -20,7 +20,7 @@ namespace ChessGame.Decorator.MoveSetDecorator
             int dx = Math.Abs(dest_x - x);
             int dy = Math.Abs(dest_y - y);
 
-            if ((dx == 2 && dy <= 0) || (dx == 0 && dy == 2)) return true;
+            if ((dx == 2 && dy == 1) || (dx == 1 && dy == 2)) return true;
             return base.ValidMove(piece, board, dest_x, dest_y);
         }
     }

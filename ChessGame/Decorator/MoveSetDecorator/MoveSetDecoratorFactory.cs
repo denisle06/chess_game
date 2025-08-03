@@ -15,7 +15,7 @@ namespace ChessGame.Decorator.MoveSetDecorator
             switch (type.ToLower())
             {
                 case "pawn":
-                    return new DiagonalPawnDecorator(baseMoveSet);
+                    return new LongPawnDecorator(baseMoveSet);
                 case "king":
                     return new AgileKingDecorator(baseMoveSet);
                 case "rook":

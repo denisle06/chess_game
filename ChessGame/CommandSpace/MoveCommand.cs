@@ -19,7 +19,6 @@ namespace ChessGame.CommandSpace
         MoveType _moveType;
         ChessPiece moved_piece = null;
         ChessPiece captured_piece = null;
-        ChessPiece new_piece = null;
         (int, int) old_location; //for undo
         (int, int) new_location;
 
@@ -28,7 +27,7 @@ namespace ChessGame.CommandSpace
         {
             _board = board;
             moved_piece = piece;
-            old_location = (piece.X, piece.Y);
+           old_location = (piece.X, piece.Y);
             new_location = location;
             captured_piece = _board.ChessGrid[location.Item1, location.Item2];
             _moveType = CheckMoveType(piece, location);

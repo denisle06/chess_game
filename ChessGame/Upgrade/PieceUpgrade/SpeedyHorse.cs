@@ -14,7 +14,7 @@ namespace ChessGame.Upgrade.PieceUpgrade
             _identifier.Add("knight");
             _description = "Knight can now move in a three-tile long L-shape";
             GetAffectedPiece();
-            Apply();
+            
         }
     }
 }

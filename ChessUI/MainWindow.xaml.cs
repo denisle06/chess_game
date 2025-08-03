@@ -67,11 +67,7 @@ namespace ChessUI
                 {
                     ChessPiece piece = board.ChessGrid[row, col];
                     pieceImages[row, col].Source = Images.GetImage(piece);
-                    if (GameManager.Instance.TurnCount == 15 || GameManager.Instance.TurnCount == 30 || GameManager.Instance.TurnCount == 45)
-                    {
-                        ShowUpgradeMenu();
-                        return;
-                    }
+                    
                 }
             }
         }
@@ -137,6 +133,11 @@ namespace ChessUI
                         return;
                     }
 
+                    if (GameManager.Instance.TurnCount == 15 || GameManager.Instance.TurnCount == 30 || GameManager.Instance.TurnCount == 45)
+                    {
+                        ShowUpgradeMenu();
+                        return;
+                    }
                     _game.ChangeTurn();                   
                     DrawBoard(_game.Board);   
                 }
@@ -192,7 +193,9 @@ namespace ChessUI
                     ShowGameOver();
                     return;
                 }
+                
                 _game.ChangeTurn();
+                HideHighlights();
                 DrawBoard(GameManager.Instance.Board);
             };
         }
@@ -244,6 +247,9 @@ namespace ChessUI
         private void RestartGame()
         {
             GameManager.Instance.Reset();
+            selected_pos = null;
+            HideHighlights();
+            avai_moves = null;
             DrawBoard(GameManager.Instance.Board);
         }
     }

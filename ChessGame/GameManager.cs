@@ -15,9 +15,7 @@ namespace ChessGame
 {
     public enum Color { White, Black}
     public enum Winner { None, White, Black}
-    public enum State { Run, End}
-
-    public enum Option { Restart, Exit, Continue}
+    public enum Option { Restart, Exit}
 
     public enum EndReason { None, Checkmate, Stalemate, FiftyMoveRule, InsufficientMaterial}
 
@@ -375,25 +373,37 @@ namespace ChessGame
 
         public void Reset()
         {
+            // Reinitialize the board and players
             _board = new Board();
-
             _whiteP = new Player(Color.White, _board);
             _blackP = new Player(Color.Black, _board);
-            List<Player> players = new List<Player> { _whiteP, _blackP };
 
+            // Reset shared board reference
+            List<Player> players = new List<Player> { _whiteP, _blackP };
+            _board.createGrid(players);
+
+            // Reset game state
             _turn = Color.White;
             _stop = false;
-            _winner = default;
-            _endReason = default;
-
-            _board.createGrid(players);
+            _winner = Winner.None;
+            _endReason = EndReason.None;
             fifty_moves = 0;
             turn_count = 0;
             _justCommand = null;
-            Debug.WriteLine("Game has been reset.");
+
+            // Reset pawn state (JustMoveTwo) in case of stale references
+            foreach (var pawn in _whiteP.Pieces.Concat(_blackP.Pieces).OfType<Pawn>())
+            {
+                pawn.JustMoveTwo = false;
+            }
+
+            // Clear any temporary or tracking lists if needed
+            id_list = new List<int> { 1, 2, 3, 4, 5, 6 };
+
+            Debug.WriteLine("Game has been fully reset.");
         }
 
-        
+
 
 
         public Board Board

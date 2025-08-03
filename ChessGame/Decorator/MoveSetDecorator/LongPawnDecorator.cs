@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ChessGame.Decorator.MoveSetDecorator
 {
-    internal class DiagonalPawnDecorator : MoveSetDecorator
+    internal class LongPawnDecorator : MoveSetDecorator
     {
-        public DiagonalPawnDecorator(PieceMoveSet baseMoveSet): base(baseMoveSet) {} //pawn can move diagonally
+        public LongPawnDecorator(PieceMoveSet baseMoveSet): base(baseMoveSet) {} //pawn can move diagonally
 
         public override bool ValidMove(ChessPiece piece, Board board,  int dest_x, int dest_y)
         {
@@ -21,7 +21,11 @@ namespace ChessGame.Decorator.MoveSetDecorator
             if (piece.Color == Color.White) direction = 1;
             else direction = -1;
 
-            if (Math.Abs(x - dest_x) == 1 && (y - dest_y) == direction) return true;
+            if (x == dest_x)
+            {
+                if (dest_y - y == direction * 2) return true;
+            }
+                
             return base.ValidMove(piece, board, dest_x, dest_y);
         }
     }

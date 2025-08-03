@@ -20,7 +20,7 @@ namespace ChessGame.Upgrade
                 case 2:
                     return new AlternatingBishop(GameManager.Instance.Board);
                 case 3:
-                    return new DiagonalPawn(GameManager.Instance.Board);
+                    return new LongPawn(GameManager.Instance.Board);
                 case 4:
                     return new LongRangeCatapult(GameManager.Instance.Board);
                 case 5:

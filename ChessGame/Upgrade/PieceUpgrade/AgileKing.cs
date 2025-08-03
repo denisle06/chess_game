@@ -14,7 +14,7 @@ namespace ChessGame.Upgrade.PieceUpgrade
             _identifier.Add("king");
             _description = "King can now move 2 tiles in any direction";
             GetAffectedPiece();
-            Apply();
+            
         }
     }
 }

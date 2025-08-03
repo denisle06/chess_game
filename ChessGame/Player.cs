@@ -13,8 +13,6 @@ namespace ChessGame
     
     public class Player
     {
-        MoveCommand _command;
-        Stack<MoveCommand> _stack = new Stack<MoveCommand>();
         List<ChessPiece> _pieces = new List<ChessPiece> ();
         Color _playerColor;
         Board _board;
@@ -82,17 +80,6 @@ namespace ChessGame
         public Board Board
         {
             get { return _board; }
-        }
-        public MoveCommand Command 
-        {
-            get { return _command; }
-            set { _command = value; }
-        }
-
-        public Stack<MoveCommand> CommandList
-        {
-            get { return _stack; }
-            set { _stack = value; }
         }
     }
 }

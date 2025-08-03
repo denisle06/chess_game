@@ -26,3 +26,8 @@ C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\
 C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\ChessUI.pdb
 C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\ChessUI.genruntimeconfig.cache
 C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\ref\ChessUI.dll
+C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\GameOverMenu.g.cs
+C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\PromotionMenu.g.cs
+C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\App.baml
+C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\GameOverMenu.baml
+C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\PromotionMenu.baml

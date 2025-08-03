@@ -72,6 +72,8 @@ namespace ChessUI
 
         private void BoardGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if (IsMenuOnScreen()) return;
+
             double square_size = BoardGrid.ActualWidth / 8;
 
             int y = (int)(e.GetPosition(BoardGrid).X / square_size);
@@ -113,7 +115,11 @@ namespace ChessUI
                     Player p = _game.Turn == ChessGame.Color.White ? _game.WhiteP : _game.BlackP;
                     Player opp = _game.Turn == ChessGame.Color.White ? _game.BlackP : _game.WhiteP;
                     _game.CreateAndExecuteCommand(_game.Board.ChessGrid[row, col], x, y, p, opp, false);
+                    _game.EvaluateEndGame();
+                    if (GameManager.Instance.Stop == true) ShowGameOver();
                     _game.ChangeTurn();
+                    
+                    
                     DrawBoard(_game.Board);   
                 }
             }
@@ -141,6 +147,34 @@ namespace ChessUI
             }
         }
 
+        private bool IsMenuOnScreen()
+        {
+            return MenuContainer.Content != null;
+        }
 
+        private void ShowGameOver()
+        {
+            GameOverMenu gameOverMenu = new GameOverMenu();
+            MenuContainer.Content = gameOverMenu;
+
+            gameOverMenu.OptionSelected += option =>  //lambda expression
+            {
+                if (option == Option.Restart)
+                {
+                    MenuContainer.Content = null;
+                    RestartGame();
+                }
+                else
+                {
+                    Application.Current.Shutdown();
+                }
+            };
+        }
+
+        private void RestartGame()
+        {
+            GameManager.Instance.Reset();
+            DrawBoard(GameManager.Instance.Board);
+        }
     }
 }

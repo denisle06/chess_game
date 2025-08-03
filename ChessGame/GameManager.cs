@@ -13,7 +13,13 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    public enum Color { White, Black }
+    public enum Color { White, Black}
+    public enum Winner { None, White, Black}
+    public enum State { Run, End}
+
+    public enum Option { Restart, Exit, Continue}
+
+    public enum EndReason { None, Checkmate, Stalemate, FiftyMoveRule, InsufficientMaterial, ThreefoldRepetition}
     public class GameManager
     {
         public static GameManager Instance { get; private set; } //singleton
@@ -22,7 +28,9 @@ namespace ChessGame
         private Player _whiteP;
         private Player _blackP;
         private Color _turn;
-        private bool _stop = false;
+        private bool _stop = false; //flag to stop the game 
+        private Winner _winner = Winner.None;
+        private EndReason _endReason;
 
         public GameManager() 
         {
@@ -41,28 +49,39 @@ namespace ChessGame
 
         public void ChangeTurn()
         {
-            if ((InCheck(WhiteP))) Debug.WriteLine($"{WhiteP.Color}'s king is threatened");
-            if ((InCheck(BlackP))) Debug.WriteLine($"{BlackP.Color}'s king is threatened");
-
-            if ((_turn == Color.White && Checkmate(WhiteP)) || (_turn == Color.Black && Checkmate(BlackP)))
+            if (Stop == false)
             {
-                    Debug.WriteLine($"Checkmate!");
-                if (_turn == Color.White) Debug.WriteLine($"Black won");
-                else Debug.WriteLine($"White won");
-                _stop = true;
+                Player currentPlayer = _turn == Color.White ? WhiteP : BlackP;
+                Player opp = _turn == Color.Black ? WhiteP : BlackP;
+                Debug.WriteLine($"{currentPlayer.Color}'s turn");
+                // Flip the turn
+                _turn = _turn == Color.White ? Color.Black : Color.White;
             }
-            else if (_turn == Color.White && Stalemate(WhiteP) || _turn == Color.Black && Stalemate(BlackP))
-            {
-                Debug.WriteLine($"Stalemate!");
-                Debug.WriteLine($"Draw");
-                _stop = true;
-            }
-
-            if (_turn == Color.White) _turn = Color.Black;
-            else _turn = Color.White;
+            
         }
 
-        
+        public void EvaluateEndGame()
+        {
+            Player opponent = _turn == Color.White ? BlackP : WhiteP;
+            Player p = _turn == Color.Black ? BlackP : WhiteP;
+
+            if (Checkmate(opponent))
+            {
+                _winner = _turn == Color.White ? Winner.White : Winner.Black;
+                _endReason = EndReason.Checkmate;
+                _stop = true;
+                Debug.WriteLine("Checkmate!");
+                Debug.WriteLine($"{opponent.Color} lost.");
+            }
+            else if (Stalemate(p))
+            {
+                _endReason = EndReason.Stalemate;
+                _stop = true;
+                Debug.WriteLine("Stalemate!");
+                Debug.WriteLine("Draw.");
+            }
+        }
+
 
         public void Undo(MoveCommand command) //undo the command
         {
@@ -99,6 +118,24 @@ namespace ChessGame
                         command.CapturedPiece.X = command.NewLocation.Item1;
                         command.CapturedPiece.Y = command.OldLocation.Item2;
                         _board.ChessGrid[command.NewLocation.Item1, command.OldLocation.Item2] = command.CapturedPiece;
+                    }
+                    command.MovedPiece.Moved -= 1;
+                    break;
+
+                case (MoveType.Promotion):
+                    command.MovedPiece.X = command.OldLocation.Item1;
+                    command.MovedPiece.Y = command.OldLocation.Item2;
+                    _board.ChessGrid[command.OldLocation.Item1, command.OldLocation.Item2] = command.MovedPiece;
+                    _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = null;
+
+                    if (!(command.CapturedPiece == null))
+                    {
+                        Player opponent = command.CapturedPiece.Color == Color.White ? _whiteP : _blackP;   //re-add the piece back to the player
+                        if (!opponent.Pieces.Contains(command.CapturedPiece)) opponent.Pieces.Add(command.CapturedPiece);
+
+                        command.CapturedPiece.X = command.NewLocation.Item1;
+                        command.CapturedPiece.Y = command.NewLocation.Item2;
+                        _board.ChessGrid[command.NewLocation.Item1, command.NewLocation.Item2] = command.CapturedPiece;
                     }
                     command.MovedPiece.Moved -= 1;
                     break;
@@ -187,6 +224,8 @@ namespace ChessGame
             return pos_list;
         }
 
+
+
         public bool CreateAndExecuteCommand(ChessPiece piece, int x, int y, Player p, Player opp, bool simulate) //destination x and y
             //simulate flag for the undo
         {
@@ -216,6 +255,7 @@ namespace ChessGame
                     Undo(move);
                     return true;
                 }
+
             }
             else
             {
@@ -230,6 +270,7 @@ namespace ChessGame
                         pawn.JustMoveTwo = false;
                     if (move.MovedPiece is Pawn moved_pawn && Math.Abs(move.OldLocation.Item2 - move.NewLocation.Item2) == 2) moved_pawn.JustMoveTwo = true;
                     
+
                     return true;
                 }
                             
@@ -246,10 +287,34 @@ namespace ChessGame
             return false;
         }
 
+        public bool HaveValidMove(Player p, bool simulation)
+        {
+            if (simulation == true)
+            {
+                foreach (ChessPiece piece in p.Pieces)
+                {
+                    Player opp = p == WhiteP ? BlackP : WhiteP;
+                    for (int x = 0; x < 8; x++)
+                    {
+                        for (int y = 0; y < 8; y++)
+                        {
+                            if (CreateAndExecuteCommand(piece, x, y, p, opp, true))
+                            {
+                                Debug.WriteLine("No valid move");
+                                return true;
+                            }  
+                        }
+                    }
+                }
+            }
+            
+            return false;
+        }
+
 
         public bool Checkmate(Player p)
         {
-            if (InCheck(p) && !(HaveValidMove(p))) 
+            if (InCheck(p) == true && (HaveValidMove(p, true)) == false) 
             {
                 return true;
             }
@@ -258,11 +323,29 @@ namespace ChessGame
 
         public bool Stalemate(Player p)
         {
-            if (!InCheck(p) && !(HaveValidMove(p)))
+            if (InCheck(p) == false && (HaveValidMove(p, true)) == false)
             {
                 return true;
             }
             return false;
+        }
+
+        public void Reset()
+        {
+            _board = new Board();
+
+            _whiteP = new Player(Color.White, _board);
+            _blackP = new Player(Color.Black, _board);
+            List<Player> players = new List<Player> { _whiteP, _blackP };
+
+            _turn = Color.White;
+            _stop = false;
+            _winner = default;
+            _endReason = default;
+
+            _board.createGrid(players);
+
+            Debug.WriteLine("Game has been reset.");
         }
 
         public Board Board
@@ -283,6 +366,21 @@ namespace ChessGame
         public Color Turn
         {
             get { return _turn; }
+        }
+
+        public bool Stop
+        {
+            get { return _stop; }
+        }
+
+        public Winner Winner
+        {
+            get { return _winner; }
+        }
+
+        public EndReason Reason
+        {
+            get { return _endReason; }
         }
     }
 }

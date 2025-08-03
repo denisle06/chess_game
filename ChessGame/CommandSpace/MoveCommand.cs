@@ -61,6 +61,14 @@ namespace ChessGame.CommandSpace
                     _board.ChessGrid[piece.X, piece.Y] = piece;
                     return true;
 
+                case (MoveType.Promotion):
+                    _board.ChessGrid[piece.X, piece.Y] = null;
+                    piece.X = location.Item1;
+                    piece.Y = location.Item2;
+                    _board.ChessGrid[piece.X, piece.Y] = piece;
+                    piece.Moved += 1;
+                    return true;
+
                 case (MoveType.Castling):
                     int direction = captured_piece.X > piece.X ? 1 : -1;
                     _board.ChessGrid[piece.X, piece.Y] = null;
@@ -143,6 +151,14 @@ namespace ChessGame.CommandSpace
 
                 case MoveType.Passant:
                         return true;
+
+                case MoveType.Promotion:
+                    valid = moved_piece.MoveSet.ValidMove(moved_piece, _board, new_location.Item1, new_location.Item2);
+                    clear = moved_piece.MoveSet.CheckObstruction(moved_piece, _board, new_location.Item1, new_location.Item2);
+                    capture = moved_piece.MoveSet.CheckCapture(moved_piece, _board, new_location.Item1, new_location.Item2);
+
+                    if (valid && clear && capture) return true;
+                    else return false;
 
                 case MoveType.Castling:
                     Player p = GameManager.Instance.WhiteP.Color == MovedPiece.Color ? GameManager.Instance.WhiteP : GameManager.Instance.BlackP;    

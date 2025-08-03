@@ -11,8 +11,9 @@ namespace ChessGame.Upgrade.PieceUpgrade
     {
         public LongRangeCatapult(Board board) : base(board)
         {
-            _identifier.Add("range");
+            _identifier.Add("rook");
             _description = "Rook can now capture pieces 1 tiles away";
+            GetAffectedPiece();
             Apply();
         }
     }

@@ -4,6 +4,7 @@ using ChessGame.MoveSet;
 using ChessGame.Pieces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,8 +22,6 @@ namespace ChessGame.Upgrade.PieceUpgrade
         {
             _board = board;
             _identifier.Add("piece");
-
-            GetAffectedPiece();
         }
 
 
@@ -34,9 +33,13 @@ namespace ChessGame.Upgrade.PieceUpgrade
             {
                 foreach (string id in _identifier)
                 {
+                    Debug.WriteLine($"Name of the piece: {piece.Name.ToLower()}");
+                    Debug.WriteLine($"Each id: {id}");
                     if (piece.Name.ToLower().Contains(id)) _chessPieces.Add(piece);
                 }
-            }        
+            }
+            Debug.WriteLine($"All piece count: {all_pieces.Count()}");
+            Debug.WriteLine($"Available piece count: {_chessPieces.Count}");
         }
 
         public void Apply()

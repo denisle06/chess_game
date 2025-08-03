@@ -13,6 +13,7 @@ namespace ChessGame.Upgrade.PieceUpgrade
         {
             _identifier.Add("queen");
             _description = "Queen can now retreat like a knight";
+            GetAffectedPiece();
             Apply();
         }
     }

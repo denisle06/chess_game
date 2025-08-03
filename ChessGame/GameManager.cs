@@ -445,6 +445,7 @@ namespace ChessGame
         public int TurnCount
         {
             get { return turn_count; }
+            set { turn_count = value; }
         }
     }
 }

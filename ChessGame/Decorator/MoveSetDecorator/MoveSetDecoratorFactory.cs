@@ -14,17 +14,17 @@ namespace ChessGame.Decorator.MoveSetDecorator
         {
             switch (type.ToLower())
             {
-                case "diagonal_pawn":
+                case "pawn":
                     return new DiagonalPawnDecorator(baseMoveSet);
-                case "agile_king":
+                case "king":
                     return new AgileKingDecorator(baseMoveSet);
-                case "long_range":
+                case "rook":
                     return new LongRangeCatapultDecorator(baseMoveSet);
-                case "retreating_queen":
+                case "queen":
                     return new RetreatingQueenDecorator(baseMoveSet);
-                case "speedy_horse":
+                case "knight":
                     return new SpeedyHorseDecorator(baseMoveSet);
-                case "alternating_bishop":
+                case "bishop":
                     return new AlternatingBishopDecorator(baseMoveSet);
                 default:
                     throw new ArgumentException($"Invalid piece type: {type}");

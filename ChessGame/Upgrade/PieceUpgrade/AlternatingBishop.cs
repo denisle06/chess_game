@@ -13,6 +13,7 @@ namespace ChessGame.Upgrade.PieceUpgrade
         {
             _identifier.Add("bishop");
             _description = "Bishop can now alternate between diagonal tiles";
+            GetAffectedPiece();
             Apply();
         }
     }

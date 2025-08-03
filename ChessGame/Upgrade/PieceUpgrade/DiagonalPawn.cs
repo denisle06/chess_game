@@ -13,6 +13,7 @@ namespace ChessGame.Upgrade.PieceUpgrade
         {
             _identifier.Add("pawn");
             _description = "Pawn can now move diagonally";
+            GetAffectedPiece();
             Apply();
         }
     }

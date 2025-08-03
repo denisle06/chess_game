@@ -120,6 +120,7 @@ namespace ChessUI
                 if (selected_pos is (int row, int col))
                 {
                     
+
                     Player p = _game.Turn == ChessGame.Color.White ? _game.WhiteP : _game.BlackP;
                     Player opp = _game.Turn == ChessGame.Color.White ? _game.BlackP : _game.WhiteP;
                     _game.CreateAndExecuteCommand(_game.Board.ChessGrid[row, col], x, y, p, opp, false);

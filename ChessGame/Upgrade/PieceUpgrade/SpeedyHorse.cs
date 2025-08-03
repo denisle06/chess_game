@@ -11,7 +11,9 @@ namespace ChessGame.Upgrade.PieceUpgrade
     {
         public SpeedyHorse(Board board) : base(board)
         {
-            _identifier.Add("speedy_horse");
+            _identifier.Add("knight");
+            _description = "Knight can now move in a three-tile long L-shape";
+            Apply();
         }
     }
 }

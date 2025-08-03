@@ -11,7 +11,9 @@ namespace ChessGame.Upgrade.PieceUpgrade
     {
         public AgileKing(Board board) : base(board)
         {
-            _identifier.Add("agile_king");
+            _identifier.Add("king");
+            _description = "King can now move 2 tiles in any direction";
+            Apply();
         }
     }
 }

@@ -31,3 +31,5 @@ C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\
 C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\App.baml
 C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\GameOverMenu.baml
 C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\PromotionMenu.baml
+C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\UpgradeMenu.g.cs
+C:\Swinburne Class\Object Oriented Programming\Repo\ChessGame\ChessUI\obj\Debug\net8.0-windows\UpgradeMenu.baml

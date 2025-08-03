@@ -11,7 +11,9 @@ namespace ChessGame.Upgrade.PieceUpgrade
     {
         public DiagonalPawn(Board board) : base(board)
         {
-            _identifier.Add("diagonal_pawn");
+            _identifier.Add("pawn");
+            _description = "Pawn can now move diagonally";
+            Apply();
         }
     }
 }

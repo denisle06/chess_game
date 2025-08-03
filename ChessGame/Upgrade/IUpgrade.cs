@@ -10,8 +10,10 @@ using System.Threading.Tasks;
 
 namespace ChessGame.Upgrade
 {
-    internal interface IUpgrade
+    public interface IUpgrade
     {
-        public abstract void Apply();
+        void Apply();
+
+        string Description { get; set; }
     }
 }

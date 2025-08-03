@@ -34,6 +34,8 @@ namespace ChessGame
         private Winner _winner = Winner.None;
         private EndReason _endReason;
         private int fifty_moves = 0;
+        private int turn_count = 0;
+        private List<int> id_list = new List<int> { 1, 2, 3, 4, 5, 6};
         private MoveCommand _justCommand;
 
         public GameManager() 
@@ -60,6 +62,7 @@ namespace ChessGame
                 Debug.WriteLine($"{currentPlayer.Color}'s turn");
                 // Flip the turn
                 _turn = _turn == Color.White ? Color.Black : Color.White;
+                turn_count += 1;
             }
             
         }
@@ -247,7 +250,7 @@ namespace ChessGame
         public bool CreateAndExecuteCommand(ChessPiece piece, int x, int y, Player p, Player opp, bool simulate) //destination x and y
             //simulate flag for the undo
         {
-            if ((x, y) == (piece.X, piece.Y)) return false;
+            
             MoveCommand move = new MoveCommand(_board, piece, (x, y));
 
             bool execute = move.Execute(piece, (x, y));
@@ -290,6 +293,7 @@ namespace ChessGame
                     if (move.MovedPiece is Pawn moved_pawn && Math.Abs(move.OldLocation.Item2 - move.NewLocation.Item2) == 2) moved_pawn.JustMoveTwo = true;
                     if (!(move.MovedPiece is Pawn) || move.CapturedPiece != null) fifty_moves += 1; //fifty move rule
                     else fifty_moves = 0;
+                    
 
                     return true;
                 }
@@ -383,9 +387,14 @@ namespace ChessGame
             _endReason = default;
 
             _board.createGrid(players);
-
+            fifty_moves = 0;
+            turn_count = 0;
+            _justCommand = null;
             Debug.WriteLine("Game has been reset.");
         }
+
+        
+
 
         public Board Board
         {
@@ -425,6 +434,17 @@ namespace ChessGame
         public MoveCommand Command
         {
             get { return _justCommand; }
+        }
+
+        public List<int> ID_List
+        {
+            get { return id_list; }
+            set { id_list = value; }
+        }
+
+        public int TurnCount
+        {
+            get { return turn_count; }
         }
     }
 }

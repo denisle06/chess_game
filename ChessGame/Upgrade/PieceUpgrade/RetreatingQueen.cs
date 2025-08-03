@@ -11,7 +11,9 @@ namespace ChessGame.Upgrade.PieceUpgrade
     {
         public RetreatingQueen(Board board) : base(board)
         {
-            _identifier.Add("retreating_queen");
+            _identifier.Add("queen");
+            _description = "Queen can now retreat like a knight";
+            Apply();
         }
     }
 }

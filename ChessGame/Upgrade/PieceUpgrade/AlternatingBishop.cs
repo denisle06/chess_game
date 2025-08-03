@@ -11,7 +11,9 @@ namespace ChessGame.Upgrade.PieceUpgrade
     {
         public AlternatingBishop(Board board) : base(board)
         {
-            _identifier.Add("alternating_bishop");
+            _identifier.Add("bishop");
+            _description = "Bishop can now alternate between diagonal tiles";
+            Apply();
         }
     }
 }

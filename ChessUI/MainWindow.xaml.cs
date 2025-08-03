@@ -1,6 +1,7 @@
 ﻿using ChessGame;
 using ChessGame.CommandSpace;
 using ChessGame.Pieces;
+using ChessGame.Upgrade;
 using System.Diagnostics;
 using System.Drawing;
 using System.Text;
@@ -66,6 +67,11 @@ namespace ChessUI
                 {
                     ChessPiece piece = board.ChessGrid[row, col];
                     pieceImages[row, col].Source = Images.GetImage(piece);
+                    if (GameManager.Instance.TurnCount == 15 || GameManager.Instance.TurnCount == 30 || GameManager.Instance.TurnCount == 45)
+                    {
+                        ShowUpgradeMenu();
+                        return;
+                    }
                 }
             }
         }
@@ -108,10 +114,12 @@ namespace ChessUI
 
         private void MoveToPosition(int x, int y)
         {
-            if (avai_moves.Contains((x, y))) 
+
+            if (avai_moves.Contains((x, y)))
             {
                 if (selected_pos is (int row, int col))
                 {
+                    
                     Player p = _game.Turn == ChessGame.Color.White ? _game.WhiteP : _game.BlackP;
                     Player opp = _game.Turn == ChessGame.Color.White ? _game.BlackP : _game.WhiteP;
                     _game.CreateAndExecuteCommand(_game.Board.ChessGrid[row, col], x, y, p, opp, false);
@@ -121,12 +129,13 @@ namespace ChessUI
                         return;
                     }
                     _game.EvaluateEndGame();
+                    
                     if (GameManager.Instance.Stop == true) 
                     {
                         ShowGameOver();
                         return;
                     }
-                    
+
                     _game.ChangeTurn();                   
                     DrawBoard(_game.Board);   
                 }
@@ -155,10 +164,33 @@ namespace ChessUI
                 _game.EvaluateEndGame();
                 if (GameManager.Instance.Stop == true)
                 {
+                    HideHighlights();
                     ShowGameOver();
+                    
                     return;
                 }
 
+                _game.ChangeTurn();
+                DrawBoard(GameManager.Instance.Board);
+            };
+        }
+
+        private void ShowUpgradeMenu()
+        {
+            UpgradeMenu upgradeMenu = new UpgradeMenu();
+            MenuContainer.Content = upgradeMenu;
+
+            upgradeMenu.UpgradeSelected += (IUpgrade upgrade) =>
+            {
+                MenuContainer.Content = null;
+
+                _game.EvaluateEndGame();
+                if (GameManager.Instance.Stop)
+                {
+                    HideHighlights();
+                    ShowGameOver();
+                    return;
+                }
                 _game.ChangeTurn();
                 DrawBoard(GameManager.Instance.Board);
             };

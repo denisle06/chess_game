@@ -15,11 +15,14 @@ namespace ChessGame.Upgrade.PieceUpgrade
         protected Board _board;
         protected List<string> _identifier = new List<string> { };
         protected MoveSetDecorator _decorator;
-        protected List<ChessPiece> _chessPieces;
+        protected List<ChessPiece> _chessPieces = new List<ChessPiece> { };
+        protected string _description;
         public PieceUpgrade(Board board)
         {
             _board = board;
             _identifier.Add("piece");
+
+            GetAffectedPiece();
         }
 
 
@@ -43,6 +46,12 @@ namespace ChessGame.Upgrade.PieceUpgrade
                 MoveSetDecorator decorator = MoveSetDecoratorFactory.CreateMoveSetDecorator(_identifier[1], piece.MoveSet);
                 decorator.Apply(piece);
             }
+        }
+
+        public String Description
+        {
+            get { return _description; } 
+            set { _description = value; }
         }
     }
 }

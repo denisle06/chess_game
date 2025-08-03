@@ -39,6 +39,7 @@ namespace ChessGame.CommandSpace
 
         public bool Execute(ChessPiece piece, (int, int) location)
         {
+
             if ((location.Item1, location.Item2) == (piece.X, piece.Y)) return false;
             bool check = ConditionCheck();
             if (!check) return false;
